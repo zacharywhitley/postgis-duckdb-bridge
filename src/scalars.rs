@@ -159,6 +159,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_blob(conn, "st_shortest_line_threed") {
         eprintln!("[shim-scalars] skipping `st_shortest_line_threed`: {e}");
     } // alias of st_3dshortestline
+    if let Err(e) = register_blob_text_f64_to_blob(conn, "st_addband") {
+        eprintln!("[shim-scalars] skipping `st_addband`: {e}");
+    }
+    if let Err(e) = register_blob_text_f64_to_blob(conn, "st_add_band") {
+        eprintln!("[shim-scalars] skipping `st_add_band`: {e}");
+    } // alias of st_addband
     if let Err(e) = register_blob_blob_to_blob(conn, "st_addface") {
         eprintln!("[shim-scalars] skipping `st_addface`: {e}");
     }
@@ -168,6 +174,42 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_blob(conn, "topology_add_face") {
         eprintln!("[shim-scalars] skipping `topology_add_face`: {e}");
     } // alias of st_addface
+    if let Err(e) = register_blob_blob_to_text(conn, "st_addface2") {
+        eprintln!("[shim-scalars] skipping `st_addface2`: {e}");
+    }
+    if let Err(e) = register_blob_blob_to_text(conn, "st_add_face2") {
+        eprintln!("[shim-scalars] skipping `st_add_face2`: {e}");
+    } // alias of st_addface2
+    if let Err(e) = register_blob_u32_u32_blob_to_blob(conn, "st_addisoedge") {
+        eprintln!("[shim-scalars] skipping `st_addisoedge`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_blob_to_blob(conn, "st_add_iso_edge") {
+        eprintln!("[shim-scalars] skipping `st_add_iso_edge`: {e}");
+    } // alias of st_addisoedge
+    if let Err(e) = register_blob_u32_u32_blob_to_blob(conn, "topology_add_iso_edge") {
+        eprintln!("[shim-scalars] skipping `topology_add_iso_edge`: {e}");
+    } // alias of st_addisoedge
+    if let Err(e) = register_blob_u32_u32_blob_to_text(conn, "st_addisoedge2") {
+        eprintln!("[shim-scalars] skipping `st_addisoedge2`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_blob_to_text(conn, "st_add_iso_edge2") {
+        eprintln!("[shim-scalars] skipping `st_add_iso_edge2`: {e}");
+    } // alias of st_addisoedge2
+    if let Err(e) = register_blob_i32_blob_to_blob(conn, "st_addisonode") {
+        eprintln!("[shim-scalars] skipping `st_addisonode`: {e}");
+    }
+    if let Err(e) = register_blob_i32_blob_to_blob(conn, "st_add_iso_node") {
+        eprintln!("[shim-scalars] skipping `st_add_iso_node`: {e}");
+    } // alias of st_addisonode
+    if let Err(e) = register_blob_i32_blob_to_blob(conn, "topology_add_iso_node") {
+        eprintln!("[shim-scalars] skipping `topology_add_iso_node`: {e}");
+    } // alias of st_addisonode
+    if let Err(e) = register_blob_i32_blob_to_text(conn, "st_addisonode2") {
+        eprintln!("[shim-scalars] skipping `st_addisonode2`: {e}");
+    }
+    if let Err(e) = register_blob_i32_blob_to_text(conn, "st_add_iso_node2") {
+        eprintln!("[shim-scalars] skipping `st_add_iso_node2`: {e}");
+    } // alias of st_addisonode2
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_addmeasure") {
         eprintln!("[shim-scalars] skipping `st_addmeasure`: {e}");
     }
@@ -180,6 +222,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_blob(conn, "st_add_point") {
         eprintln!("[shim-scalars] skipping `st_add_point`: {e}");
     } // alias of st_addpoint
+    if let Err(e) = register_blob_f64_f64_f64_f64_f64_f64_to_blob(conn, "st_affine") {
+        eprintln!("[shim-scalars] skipping `st_affine`: {e}");
+    }
+    if let Err(e) = register_blob_blob_blob_to_f64(conn, "st_angle") {
+        eprintln!("[shim-scalars] skipping `st_angle`: {e}");
+    }
     if let Err(e) = register_blob_to_blob(conn, "st_approximatemedialaxis") {
         eprintln!("[shim-scalars] skipping `st_approximatemedialaxis`: {e}");
     }
@@ -213,6 +261,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_u32(conn, "st_array_rows") {
         eprintln!("[shim-scalars] skipping `st_array_rows`: {e}");
     } // alias of st_arrayrows
+    if let Err(e) = register_blob_u32_u32_to_f64(conn, "st_arrayvalue") {
+        eprintln!("[shim-scalars] skipping `st_arrayvalue`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_to_f64(conn, "st_array_value") {
+        eprintln!("[shim-scalars] skipping `st_array_value`: {e}");
+    } // alias of st_arrayvalue
     if let Err(e) = register_blob_to_blob(conn, "st_asbinary") {
         eprintln!("[shim-scalars] skipping `st_asbinary`: {e}");
     }
@@ -288,6 +342,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_text(conn, "st_asmarc21") {
         eprintln!("[shim-scalars] skipping `st_asmarc21`: {e}");
     }
+    if let Err(e) = register_blob_text_i32_to_blob(conn, "st_asmvt") {
+        eprintln!("[shim-scalars] skipping `st_asmvt`: {e}");
+    }
+    if let Err(e) = register_blob_text_i32_to_blob(conn, "st_as_mvt") {
+        eprintln!("[shim-scalars] skipping `st_as_mvt`: {e}");
+    } // alias of st_asmvt
     if let Err(e) = register_blob_4f64_to_blob(conn, "st_asmvtgeom") {
         eprintln!("[shim-scalars] skipping `st_asmvtgeom`: {e}");
     }
@@ -348,6 +408,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_f64(conn, "st_azimuth") {
         eprintln!("[shim-scalars] skipping `st_azimuth`: {e}");
     }
+    if let Err(e) = register_blob_u32_to_f64(conn, "st_bandnodatavalue") {
+        eprintln!("[shim-scalars] skipping `st_bandnodatavalue`: {e}");
+    }
+    if let Err(e) = register_blob_u32_to_f64(conn, "st_band_nodata_value") {
+        eprintln!("[shim-scalars] skipping `st_band_nodata_value`: {e}");
+    } // alias of st_bandnodatavalue
     if let Err(e) = register_blob_u32_to_text(conn, "st_bandpixeltype") {
         eprintln!("[shim-scalars] skipping `st_bandpixeltype`: {e}");
     }
@@ -441,6 +507,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_to_blob(conn, "st_buffer_batch") {
         eprintln!("[shim-scalars] skipping `st_buffer_batch`: {e}");
     } // alias of st_buffer
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_bufferwithsegs") {
+        eprintln!("[shim-scalars] skipping `st_bufferwithsegs`: {e}");
+    }
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_buffer_with_segs") {
+        eprintln!("[shim-scalars] skipping `st_buffer_with_segs`: {e}");
+    } // alias of st_bufferwithsegs
     if let Err(e) = register_blob_to_blob(conn, "st_buildarea") {
         eprintln!("[shim-scalars] skipping `st_buildarea`: {e}");
     }
@@ -486,12 +558,24 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_f64(conn, "st_closest_point_of_approach") {
         eprintln!("[shim-scalars] skipping `st_closest_point_of_approach`: {e}");
     } // alias of st_closestpointofapproach
+    if let Err(e) = register_blob_f64_i32_to_text(conn, "st_clusterdbscan") {
+        eprintln!("[shim-scalars] skipping `st_clusterdbscan`: {e}");
+    }
+    if let Err(e) = register_blob_f64_i32_to_text(conn, "st_cluster_dbscan") {
+        eprintln!("[shim-scalars] skipping `st_cluster_dbscan`: {e}");
+    } // alias of st_clusterdbscan
     if let Err(e) = register_blob_to_blob(conn, "st_clusterintersecting") {
         eprintln!("[shim-scalars] skipping `st_clusterintersecting`: {e}");
     }
     if let Err(e) = register_blob_to_blob(conn, "st_cluster_intersecting") {
         eprintln!("[shim-scalars] skipping `st_cluster_intersecting`: {e}");
     } // alias of st_clusterintersecting
+    if let Err(e) = register_blob_i32_to_text(conn, "st_clusterkmeans") {
+        eprintln!("[shim-scalars] skipping `st_clusterkmeans`: {e}");
+    }
+    if let Err(e) = register_blob_i32_to_text(conn, "st_cluster_kmeans") {
+        eprintln!("[shim-scalars] skipping `st_cluster_kmeans`: {e}");
+    } // alias of st_clusterkmeans
     if let Err(e) = register_blob_f64_to_blob(conn, "st_clusterwithin") {
         eprintln!("[shim-scalars] skipping `st_clusterwithin`: {e}");
     }
@@ -570,6 +654,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_to_blob(conn, "st_coverage_invalid_edges") {
         eprintln!("[shim-scalars] skipping `st_coverage_invalid_edges`: {e}");
     } // alias of st_coverageinvalidedges
+    if let Err(e) = register_blob_f64_bool_to_blob(conn, "st_coveragesimplify") {
+        eprintln!("[shim-scalars] skipping `st_coveragesimplify`: {e}");
+    }
+    if let Err(e) = register_blob_f64_bool_to_blob(conn, "st_coverage_simplify") {
+        eprintln!("[shim-scalars] skipping `st_coverage_simplify`: {e}");
+    } // alias of st_coveragesimplify
     if let Err(e) = register_blob_blob_to_bool(conn, "st_coveredby") {
         eprintln!("[shim-scalars] skipping `st_coveredby`: {e}");
     }
@@ -588,6 +678,21 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_f64_to_bool(conn, "st_cpa_within") {
         eprintln!("[shim-scalars] skipping `st_cpa_within`: {e}");
     } // alias of st_cpawithin
+    if let Err(e) = register_blob_u32_text_to_text(conn, "st_createtopogeom") {
+        eprintln!("[shim-scalars] skipping `st_createtopogeom`: {e}");
+    }
+    if let Err(e) = register_blob_u32_text_to_text(conn, "st_create_topo_geom") {
+        eprintln!("[shim-scalars] skipping `st_create_topo_geom`: {e}");
+    } // alias of st_createtopogeom
+    if let Err(e) = register_text_i32_f64_to_blob(conn, "st_createtopology") {
+        eprintln!("[shim-scalars] skipping `st_createtopology`: {e}");
+    }
+    if let Err(e) = register_text_i32_f64_to_blob(conn, "st_create_topology") {
+        eprintln!("[shim-scalars] skipping `st_create_topology`: {e}");
+    } // alias of st_createtopology
+    if let Err(e) = register_text_i32_f64_to_blob(conn, "topology_create") {
+        eprintln!("[shim-scalars] skipping `topology_create`: {e}");
+    } // alias of st_createtopology
     if let Err(e) = register_blob_blob_to_bool(conn, "st_crosses") {
         eprintln!("[shim-scalars] skipping `st_crosses`: {e}");
     }
@@ -750,6 +855,9 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_exterior_ring") {
         eprintln!("[shim-scalars] skipping `st_exterior_ring`: {e}");
     } // alias of st_exteriorring
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_extrude") {
+        eprintln!("[shim-scalars] skipping `st_extrude`: {e}");
+    }
     if let Err(e) = register_blob_f64_to_blob(conn, "st_filterbym") {
         eprintln!("[shim-scalars] skipping `st_filterbym`: {e}");
     }
@@ -897,6 +1005,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_to_blob(conn, "st_geog_buffer") {
         eprintln!("[shim-scalars] skipping `st_geog_buffer`: {e}");
     } // alias of st_geogbuffer
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_geogbufferwithsegs") {
+        eprintln!("[shim-scalars] skipping `st_geogbufferwithsegs`: {e}");
+    }
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_geog_buffer_with_segs") {
+        eprintln!("[shim-scalars] skipping `st_geog_buffer_with_segs`: {e}");
+    } // alias of st_geogbufferwithsegs
     if let Err(e) = register_blob_to_blob(conn, "st_geogcentroid") {
         eprintln!("[shim-scalars] skipping `st_geogcentroid`: {e}");
     }
@@ -1011,6 +1125,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_f64(conn, "st_geog_perimeter_batch") {
         eprintln!("[shim-scalars] skipping `st_geog_perimeter_batch`: {e}");
     } // alias of st_geogperimeter
+    if let Err(e) = register_f64_f64_to_blob(conn, "st_geogpoint") {
+        eprintln!("[shim-scalars] skipping `st_geogpoint`: {e}");
+    }
+    if let Err(e) = register_f64_f64_to_blob(conn, "st_geog_point") {
+        eprintln!("[shim-scalars] skipping `st_geog_point`: {e}");
+    } // alias of st_geogpoint
     if let Err(e) = register_blob_to_text(conn, "st_geogsummary") {
         eprintln!("[shim-scalars] skipping `st_geogsummary`: {e}");
     }
@@ -1089,6 +1209,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_text_to_blob(conn, "st_geom_from_gml") {
         eprintln!("[shim-scalars] skipping `st_geom_from_gml`: {e}");
     } // alias of st_geomfromgml
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geomfromgmlsrid") {
+        eprintln!("[shim-scalars] skipping `st_geomfromgmlsrid`: {e}");
+    }
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geom_from_gml_srid") {
+        eprintln!("[shim-scalars] skipping `st_geom_from_gml_srid`: {e}");
+    } // alias of st_geomfromgmlsrid
     if let Err(e) = register_text_to_blob(conn, "st_geomfromhexewkb") {
         eprintln!("[shim-scalars] skipping `st_geomfromhexewkb`: {e}");
     }
@@ -1176,6 +1302,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_text_to_blob(conn, "st_wkttosql") {
         eprintln!("[shim-scalars] skipping `st_wkttosql`: {e}");
     } // alias of st_geomfromtext
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geomfromtextsrid") {
+        eprintln!("[shim-scalars] skipping `st_geomfromtextsrid`: {e}");
+    }
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geom_from_text_srid") {
+        eprintln!("[shim-scalars] skipping `st_geom_from_text_srid`: {e}");
+    } // alias of st_geomfromtextsrid
     if let Err(e) = register_blob_to_blob(conn, "st_geomfromtwkb") {
         eprintln!("[shim-scalars] skipping `st_geomfromtwkb`: {e}");
     }
@@ -1233,6 +1365,15 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_wkbtosql") {
         eprintln!("[shim-scalars] skipping `st_wkbtosql`: {e}");
     } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_blob_f64_to_u32(conn, "st_getedgebypoint") {
+        eprintln!("[shim-scalars] skipping `st_getedgebypoint`: {e}");
+    }
+    if let Err(e) = register_blob_blob_f64_to_u32(conn, "st_get_edge_by_point") {
+        eprintln!("[shim-scalars] skipping `st_get_edge_by_point`: {e}");
+    } // alias of st_getedgebypoint
+    if let Err(e) = register_blob_blob_f64_to_u32(conn, "topology_get_edge_by_point") {
+        eprintln!("[shim-scalars] skipping `topology_get_edge_by_point`: {e}");
+    } // alias of st_getedgebypoint
     if let Err(e) = register_blob_u32_to_blob(conn, "st_getedgegeometry") {
         eprintln!("[shim-scalars] skipping `st_getedgegeometry`: {e}");
     }
@@ -1251,6 +1392,15 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_u32_to_blob(conn, "topology_get_face_geometry") {
         eprintln!("[shim-scalars] skipping `topology_get_face_geometry`: {e}");
     } // alias of st_getfacegeometry
+    if let Err(e) = register_blob_blob_f64_to_u32(conn, "st_getnodebypoint") {
+        eprintln!("[shim-scalars] skipping `st_getnodebypoint`: {e}");
+    }
+    if let Err(e) = register_blob_blob_f64_to_u32(conn, "st_get_node_by_point") {
+        eprintln!("[shim-scalars] skipping `st_get_node_by_point`: {e}");
+    } // alias of st_getnodebypoint
+    if let Err(e) = register_blob_blob_f64_to_u32(conn, "topology_get_node_by_point") {
+        eprintln!("[shim-scalars] skipping `topology_get_node_by_point`: {e}");
+    } // alias of st_getnodebypoint
     if let Err(e) = register_blob_u32_to_blob(conn, "st_getnodegeometry") {
         eprintln!("[shim-scalars] skipping `st_getnodegeometry`: {e}");
     }
@@ -1278,6 +1428,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_bool(conn, "st_has_m") {
         eprintln!("[shim-scalars] skipping `st_has_m`: {e}");
     } // alias of st_hasm
+    if let Err(e) = register_blob_u32_to_bool(conn, "st_hasnoband") {
+        eprintln!("[shim-scalars] skipping `st_hasnoband`: {e}");
+    }
+    if let Err(e) = register_blob_u32_to_bool(conn, "st_has_no_band") {
+        eprintln!("[shim-scalars] skipping `st_has_no_band`: {e}");
+    } // alias of st_hasnoband
     if let Err(e) = register_blob_to_bool(conn, "st_hasz") {
         eprintln!("[shim-scalars] skipping `st_hasz`: {e}");
     }
@@ -1299,6 +1455,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_u32(conn, "st_rastheight") {
         eprintln!("[shim-scalars] skipping `st_rastheight`: {e}");
     } // alias of st_height
+    if let Err(e) = register_f64_i32_i32_to_blob(conn, "st_hexagon") {
+        eprintln!("[shim-scalars] skipping `st_hexagon`: {e}");
+    }
+    if let Err(e) = register_blob_u32_f64_f64_to_blob(conn, "st_hillshade") {
+        eprintln!("[shim-scalars] skipping `st_hillshade`: {e}");
+    }
+    if let Err(e) = register_blob_u32_f64_f64_to_blob(conn, "st_hill_shade") {
+        eprintln!("[shim-scalars] skipping `st_hill_shade`: {e}");
+    } // alias of st_hillshade
+    if let Err(e) = register_blob_u32_u32_to_text(conn, "st_histogram") {
+        eprintln!("[shim-scalars] skipping `st_histogram`: {e}");
+    }
     if let Err(e) = register_blob_i32_to_blob(conn, "st_interiorringn") {
         eprintln!("[shim-scalars] skipping `st_interiorringn`: {e}");
     }
@@ -1464,6 +1632,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_text_to_blob(conn, "st_letters") {
         eprintln!("[shim-scalars] skipping `st_letters`: {e}");
     }
+    if let Err(e) = register_blob_blob_to_i32(conn, "st_linecrossingdirection") {
+        eprintln!("[shim-scalars] skipping `st_linecrossingdirection`: {e}");
+    }
+    if let Err(e) = register_blob_blob_to_i32(conn, "st_line_crossing_direction") {
+        eprintln!("[shim-scalars] skipping `st_line_crossing_direction`: {e}");
+    } // alias of st_linecrossingdirection
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_lineextend") {
         eprintln!("[shim-scalars] skipping `st_lineextend`: {e}");
     }
@@ -1488,6 +1662,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_to_blob(conn, "st_line_interpolate_point") {
         eprintln!("[shim-scalars] skipping `st_line_interpolate_point`: {e}");
     } // alias of st_lineinterpolatepoint
+    if let Err(e) = register_blob_f64_bool_to_blob(conn, "st_lineinterpolatepoints") {
+        eprintln!("[shim-scalars] skipping `st_lineinterpolatepoints`: {e}");
+    }
+    if let Err(e) = register_blob_f64_bool_to_blob(conn, "st_line_interpolate_points") {
+        eprintln!("[shim-scalars] skipping `st_line_interpolate_points`: {e}");
+    } // alias of st_lineinterpolatepoints
     if let Err(e) = register_blob_blob_to_f64(conn, "st_linelocatepoint") {
         eprintln!("[shim-scalars] skipping `st_linelocatepoint`: {e}");
     }
@@ -1569,6 +1749,69 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_blob(conn, "st_make_box3d") {
         eprintln!("[shim-scalars] skipping `st_make_box3d`: {e}");
     } // alias of st_makebox3d
+    if let Err(e) = register_u32_u32_to_blob(conn, "st_makeemptyraster") {
+        eprintln!("[shim-scalars] skipping `st_makeemptyraster`: {e}");
+    }
+    if let Err(e) = register_u32_u32_to_blob(conn, "st_make_empty_raster") {
+        eprintln!("[shim-scalars] skipping `st_make_empty_raster`: {e}");
+    } // alias of st_makeemptyraster
+    if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_makeenvelope") {
+        eprintln!("[shim-scalars] skipping `st_makeenvelope`: {e}");
+    }
+    if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_make_envelope") {
+        eprintln!("[shim-scalars] skipping `st_make_envelope`: {e}");
+    } // alias of st_makeenvelope
+    if let Err(e) = register_f64_f64_f64_f64_i32_to_blob(conn, "st_makeenvelopesrid") {
+        eprintln!("[shim-scalars] skipping `st_makeenvelopesrid`: {e}");
+    }
+    if let Err(e) = register_f64_f64_f64_f64_i32_to_blob(conn, "st_make_envelope_srid") {
+        eprintln!("[shim-scalars] skipping `st_make_envelope_srid`: {e}");
+    } // alias of st_makeenvelopesrid
+    if let Err(e) = register_f64_f64_to_blob(conn, "st_makepoint") {
+        eprintln!("[shim-scalars] skipping `st_makepoint`: {e}");
+    }
+    if let Err(e) = register_f64_f64_to_blob(conn, "st_make_point") {
+        eprintln!("[shim-scalars] skipping `st_make_point`: {e}");
+    } // alias of st_makepoint
+    if let Err(e) = register_f64_f64_to_blob(conn, "st_point") {
+        eprintln!("[shim-scalars] skipping `st_point`: {e}");
+    } // alias of st_makepoint
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_makepointm") {
+        eprintln!("[shim-scalars] skipping `st_makepointm`: {e}");
+    }
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_make_point_m") {
+        eprintln!("[shim-scalars] skipping `st_make_point_m`: {e}");
+    } // alias of st_makepointm
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_point_m") {
+        eprintln!("[shim-scalars] skipping `st_point_m`: {e}");
+    } // alias of st_makepointm
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_pointm") {
+        eprintln!("[shim-scalars] skipping `st_pointm`: {e}");
+    } // alias of st_makepointm
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_makepointz") {
+        eprintln!("[shim-scalars] skipping `st_makepointz`: {e}");
+    }
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_make_point_z") {
+        eprintln!("[shim-scalars] skipping `st_make_point_z`: {e}");
+    } // alias of st_makepointz
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_point_z") {
+        eprintln!("[shim-scalars] skipping `st_point_z`: {e}");
+    } // alias of st_makepointz
+    if let Err(e) = register_f64_f64_f64_to_blob(conn, "st_pointz") {
+        eprintln!("[shim-scalars] skipping `st_pointz`: {e}");
+    } // alias of st_makepointz
+    if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_makepointzm") {
+        eprintln!("[shim-scalars] skipping `st_makepointzm`: {e}");
+    }
+    if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_make_point_zm") {
+        eprintln!("[shim-scalars] skipping `st_make_point_zm`: {e}");
+    } // alias of st_makepointzm
+    if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_point_zm") {
+        eprintln!("[shim-scalars] skipping `st_point_zm`: {e}");
+    } // alias of st_makepointzm
+    if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_pointzm") {
+        eprintln!("[shim-scalars] skipping `st_pointzm`: {e}");
+    } // alias of st_makepointzm
     if let Err(e) = register_blob_to_blob(conn, "st_makepolygon") {
         eprintln!("[shim-scalars] skipping `st_makepolygon`: {e}");
     }
@@ -1581,6 +1824,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_make_valid") {
         eprintln!("[shim-scalars] skipping `st_make_valid`: {e}");
     } // alias of st_makevalid
+    if let Err(e) = register_blob_u32_text_text_to_blob(conn, "st_mapalgebra") {
+        eprintln!("[shim-scalars] skipping `st_mapalgebra`: {e}");
+    }
+    if let Err(e) = register_blob_u32_text_text_to_blob(conn, "st_map_algebra") {
+        eprintln!("[shim-scalars] skipping `st_map_algebra`: {e}");
+    } // alias of st_mapalgebra
+    if let Err(e) = register_blob_u32_blob_u32_text_text_to_blob(conn, "st_mapalgebra2") {
+        eprintln!("[shim-scalars] skipping `st_mapalgebra2`: {e}");
+    }
+    if let Err(e) = register_blob_u32_blob_u32_text_text_to_blob(conn, "st_map_algebra2") {
+        eprintln!("[shim-scalars] skipping `st_map_algebra2`: {e}");
+    } // alias of st_mapalgebra2
     if let Err(e) = register_blob_blob_to_f64(conn, "st_maxdistance") {
         eprintln!("[shim-scalars] skipping `st_maxdistance`: {e}");
     }
@@ -1644,6 +1899,27 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_u32_u32_to_blob(conn, "topology_mod_edge_heal") {
         eprintln!("[shim-scalars] skipping `topology_mod_edge_heal`: {e}");
     } // alias of st_modedgeheal
+    if let Err(e) = register_blob_u32_u32_to_text(conn, "st_modedgeheal2") {
+        eprintln!("[shim-scalars] skipping `st_modedgeheal2`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_to_text(conn, "st_mod_edge_heal2") {
+        eprintln!("[shim-scalars] skipping `st_mod_edge_heal2`: {e}");
+    } // alias of st_modedgeheal2
+    if let Err(e) = register_blob_u32_blob_to_blob(conn, "st_modedgesplit") {
+        eprintln!("[shim-scalars] skipping `st_modedgesplit`: {e}");
+    }
+    if let Err(e) = register_blob_u32_blob_to_blob(conn, "st_mod_edge_split") {
+        eprintln!("[shim-scalars] skipping `st_mod_edge_split`: {e}");
+    } // alias of st_modedgesplit
+    if let Err(e) = register_blob_u32_blob_to_blob(conn, "topology_mod_edge_split") {
+        eprintln!("[shim-scalars] skipping `topology_mod_edge_split`: {e}");
+    } // alias of st_modedgesplit
+    if let Err(e) = register_blob_u32_blob_to_text(conn, "st_modedgesplit2") {
+        eprintln!("[shim-scalars] skipping `st_modedgesplit2`: {e}");
+    }
+    if let Err(e) = register_blob_u32_blob_to_text(conn, "st_mod_edge_split2") {
+        eprintln!("[shim-scalars] skipping `st_mod_edge_split2`: {e}");
+    } // alias of st_modedgesplit2
     if let Err(e) = register_blob_to_blob(conn, "st_multi") {
         eprintln!("[shim-scalars] skipping `st_multi`: {e}");
     }
@@ -1656,6 +1932,27 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_u32(conn, "st_n_dims_batch") {
         eprintln!("[shim-scalars] skipping `st_n_dims_batch`: {e}");
     } // alias of st_ndims
+    if let Err(e) = register_blob_u32_u32_u32_to_f64(conn, "st_nearestvalue") {
+        eprintln!("[shim-scalars] skipping `st_nearestvalue`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_u32_to_f64(conn, "st_nearest_value") {
+        eprintln!("[shim-scalars] skipping `st_nearest_value`: {e}");
+    } // alias of st_nearestvalue
+    if let Err(e) = register_blob_u32_blob_to_blob(conn, "st_newedgessplit") {
+        eprintln!("[shim-scalars] skipping `st_newedgessplit`: {e}");
+    }
+    if let Err(e) = register_blob_u32_blob_to_blob(conn, "st_new_edges_split") {
+        eprintln!("[shim-scalars] skipping `st_new_edges_split`: {e}");
+    } // alias of st_newedgessplit
+    if let Err(e) = register_blob_u32_blob_to_blob(conn, "topology_new_edges_split") {
+        eprintln!("[shim-scalars] skipping `topology_new_edges_split`: {e}");
+    } // alias of st_newedgessplit
+    if let Err(e) = register_blob_u32_blob_to_text(conn, "st_newedgessplit2") {
+        eprintln!("[shim-scalars] skipping `st_newedgessplit2`: {e}");
+    }
+    if let Err(e) = register_blob_u32_blob_to_text(conn, "st_new_edges_split2") {
+        eprintln!("[shim-scalars] skipping `st_new_edges_split2`: {e}");
+    } // alias of st_newedgessplit2
     if let Err(e) = register_blob_to_blob(conn, "st_node") {
         eprintln!("[shim-scalars] skipping `st_node`: {e}");
     }
@@ -1794,12 +2091,24 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_u32_to_text(conn, "st_pixel_as_polygons") {
         eprintln!("[shim-scalars] skipping `st_pixel_as_polygons`: {e}");
     } // alias of st_pixelaspolygons
+    if let Err(e) = register_blob_u32_f64_to_text(conn, "st_pixelofvalue") {
+        eprintln!("[shim-scalars] skipping `st_pixelofvalue`: {e}");
+    }
+    if let Err(e) = register_blob_u32_f64_to_text(conn, "st_pixel_of_value") {
+        eprintln!("[shim-scalars] skipping `st_pixel_of_value`: {e}");
+    } // alias of st_pixelofvalue
     if let Err(e) = register_text_to_blob(conn, "st_pointfromgeohash") {
         eprintln!("[shim-scalars] skipping `st_pointfromgeohash`: {e}");
     }
     if let Err(e) = register_text_to_blob(conn, "st_point_from_geohash") {
         eprintln!("[shim-scalars] skipping `st_point_from_geohash`: {e}");
     } // alias of st_pointfromgeohash
+    if let Err(e) = register_blob_f64_f64_f64_to_bool(conn, "st_pointinsidecircle") {
+        eprintln!("[shim-scalars] skipping `st_pointinsidecircle`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_f64_to_bool(conn, "st_point_inside_circle") {
+        eprintln!("[shim-scalars] skipping `st_point_inside_circle`: {e}");
+    } // alias of st_pointinsidecircle
     if let Err(e) = register_blob_i32_to_blob(conn, "st_pointn") {
         eprintln!("[shim-scalars] skipping `st_pointn`: {e}");
     }
@@ -1827,6 +2136,15 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_project_batch") {
         eprintln!("[shim-scalars] skipping `st_project_batch`: {e}");
     } // alias of st_project
+    if let Err(e) = register_blob_u32_f64_to_f64(conn, "st_quantile") {
+        eprintln!("[shim-scalars] skipping `st_quantile`: {e}");
+    }
+    if let Err(e) = register_blob_i32_i32_to_blob(conn, "st_quantizecoordinates") {
+        eprintln!("[shim-scalars] skipping `st_quantizecoordinates`: {e}");
+    }
+    if let Err(e) = register_blob_i32_i32_to_blob(conn, "st_quantize_coordinates") {
+        eprintln!("[shim-scalars] skipping `st_quantize_coordinates`: {e}");
+    } // alias of st_quantizecoordinates
     if let Err(e) = register_blob_blob_to_bool(conn, "st_rastercontains") {
         eprintln!("[shim-scalars] skipping `st_rastercontains`: {e}");
     }
@@ -1878,6 +2196,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_u32_to_blob(conn, "st_rastpolygon") {
         eprintln!("[shim-scalars] skipping `st_rastpolygon`: {e}");
     } // alias of st_rasterpolygon
+    if let Err(e) = register_blob_u32_u32_to_f64(conn, "st_rastertoworldcoordx") {
+        eprintln!("[shim-scalars] skipping `st_rastertoworldcoordx`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_to_f64(conn, "st_raster_to_world_coord_x") {
+        eprintln!("[shim-scalars] skipping `st_raster_to_world_coord_x`: {e}");
+    } // alias of st_rastertoworldcoordx
+    if let Err(e) = register_blob_u32_u32_to_f64(conn, "st_rastertoworldcoordy") {
+        eprintln!("[shim-scalars] skipping `st_rastertoworldcoordy`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_to_f64(conn, "st_raster_to_world_coord_y") {
+        eprintln!("[shim-scalars] skipping `st_raster_to_world_coord_y`: {e}");
+    } // alias of st_rastertoworldcoordy
     if let Err(e) = register_blob_blob_to_bool(conn, "st_rasterwithin") {
         eprintln!("[shim-scalars] skipping `st_rasterwithin`: {e}");
     }
@@ -1890,12 +2220,24 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_i32(conn, "st_rast_srid") {
         eprintln!("[shim-scalars] skipping `st_rast_srid`: {e}");
     } // alias of st_rastsrid
+    if let Err(e) = register_blob_u32_text_text_to_blob(conn, "st_reclass") {
+        eprintln!("[shim-scalars] skipping `st_reclass`: {e}");
+    }
     if let Err(e) = register_blob_f64_to_blob(conn, "st_reduceprecision") {
         eprintln!("[shim-scalars] skipping `st_reduceprecision`: {e}");
     }
     if let Err(e) = register_blob_f64_to_blob(conn, "st_reduce_precision") {
         eprintln!("[shim-scalars] skipping `st_reduce_precision`: {e}");
     } // alias of st_reduceprecision
+    if let Err(e) = register_blob_blob_to_text(conn, "st_relate") {
+        eprintln!("[shim-scalars] skipping `st_relate`: {e}");
+    }
+    if let Err(e) = register_text_text_to_bool(conn, "st_relatematch") {
+        eprintln!("[shim-scalars] skipping `st_relatematch`: {e}");
+    }
+    if let Err(e) = register_text_text_to_bool(conn, "st_relate_match") {
+        eprintln!("[shim-scalars] skipping `st_relate_match`: {e}");
+    } // alias of st_relatematch
     if let Err(e) = register_blob_u32_to_blob(conn, "st_removeface") {
         eprintln!("[shim-scalars] skipping `st_removeface`: {e}");
     }
@@ -1923,6 +2265,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_remove_small_parts") {
         eprintln!("[shim-scalars] skipping `st_remove_small_parts`: {e}");
     } // alias of st_removesmallparts
+    if let Err(e) = register_blob_f64_f64_text_to_blob(conn, "st_rescale") {
+        eprintln!("[shim-scalars] skipping `st_rescale`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_text_to_blob(conn, "st_resize") {
+        eprintln!("[shim-scalars] skipping `st_resize`: {e}");
+    }
     if let Err(e) = register_blob_to_blob(conn, "st_reverse") {
         eprintln!("[shim-scalars] skipping `st_reverse`: {e}");
     }
@@ -1971,6 +2319,15 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_scale") {
         eprintln!("[shim-scalars] skipping `st_scale`: {e}");
     }
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_scalethreed") {
+        eprintln!("[shim-scalars] skipping `st_scalethreed`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_3dscale") {
+        eprintln!("[shim-scalars] skipping `st_3dscale`: {e}");
+    } // alias of st_scalethreed
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_scale_threed") {
+        eprintln!("[shim-scalars] skipping `st_scale_threed`: {e}");
+    } // alias of st_scalethreed
     if let Err(e) = register_blob_to_f64(conn, "st_scalex") {
         eprintln!("[shim-scalars] skipping `st_scalex`: {e}");
     }
@@ -2001,12 +2358,30 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_set_effective_area") {
         eprintln!("[shim-scalars] skipping `st_set_effective_area`: {e}");
     } // alias of st_seteffectivearea
+    if let Err(e) = register_blob_i32_blob_to_blob(conn, "st_setpoint") {
+        eprintln!("[shim-scalars] skipping `st_setpoint`: {e}");
+    }
+    if let Err(e) = register_blob_i32_blob_to_blob(conn, "st_set_point") {
+        eprintln!("[shim-scalars] skipping `st_set_point`: {e}");
+    } // alias of st_setpoint
     if let Err(e) = register_blob_i32_to_blob(conn, "st_setsrid") {
         eprintln!("[shim-scalars] skipping `st_setsrid`: {e}");
     }
     if let Err(e) = register_blob_i32_to_blob(conn, "st_set_srid") {
         eprintln!("[shim-scalars] skipping `st_set_srid`: {e}");
     } // alias of st_setsrid
+    if let Err(e) = register_blob_u32_u32_u32_f64_to_blob(conn, "st_setvalue") {
+        eprintln!("[shim-scalars] skipping `st_setvalue`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_u32_f64_to_blob(conn, "st_set_value") {
+        eprintln!("[shim-scalars] skipping `st_set_value`: {e}");
+    } // alias of st_setvalue
+    if let Err(e) = register_blob_u32_u32_u32_blob_to_blob(conn, "st_setvalues") {
+        eprintln!("[shim-scalars] skipping `st_setvalues`: {e}");
+    }
+    if let Err(e) = register_blob_u32_u32_u32_blob_to_blob(conn, "st_set_values") {
+        eprintln!("[shim-scalars] skipping `st_set_values`: {e}");
+    } // alias of st_setvalues
     if let Err(e) = register_blob_blob_to_blob(conn, "st_sharedpaths") {
         eprintln!("[shim-scalars] skipping `st_sharedpaths`: {e}");
     }
@@ -2073,6 +2448,9 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_u32_to_blob(conn, "st_slope") {
         eprintln!("[shim-scalars] skipping `st_slope`: {e}");
     }
+    if let Err(e) = register_blob_blob_f64_to_blob(conn, "st_snap") {
+        eprintln!("[shim-scalars] skipping `st_snap`: {e}");
+    }
     if let Err(e) = register_blob_f64_to_blob(conn, "st_snaptogrid") {
         eprintln!("[shim-scalars] skipping `st_snaptogrid`: {e}");
     }
@@ -2081,6 +2459,9 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     } // alias of st_snaptogrid
     if let Err(e) = register_blob_blob_to_blob(conn, "st_split") {
         eprintln!("[shim-scalars] skipping `st_split`: {e}");
+    }
+    if let Err(e) = register_f64_i32_i32_to_blob(conn, "st_square") {
+        eprintln!("[shim-scalars] skipping `st_square`: {e}");
     }
     if let Err(e) = register_blob_to_i32(conn, "st_srid") {
         eprintln!("[shim-scalars] skipping `st_srid`: {e}");
@@ -2133,6 +2514,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_tesselate") {
         eprintln!("[shim-scalars] skipping `st_tesselate`: {e}");
     }
+    if let Err(e) = register_i32_i32_i32_to_blob(conn, "st_tileenvelope") {
+        eprintln!("[shim-scalars] skipping `st_tileenvelope`: {e}");
+    }
+    if let Err(e) = register_i32_i32_i32_to_blob(conn, "st_tile_envelope") {
+        eprintln!("[shim-scalars] skipping `st_tile_envelope`: {e}");
+    } // alias of st_tileenvelope
+    if let Err(e) = register_text_to_u32(conn, "st_topogeomelementcount") {
+        eprintln!("[shim-scalars] skipping `st_topogeomelementcount`: {e}");
+    }
+    if let Err(e) = register_text_to_u32(conn, "st_topo_geom_element_count") {
+        eprintln!("[shim-scalars] skipping `st_topo_geom_element_count`: {e}");
+    } // alias of st_topogeomelementcount
     if let Err(e) = register_text_to_blob(conn, "st_topogeomgeometry") {
         eprintln!("[shim-scalars] skipping `st_topogeomgeometry`: {e}");
     }
@@ -2148,6 +2541,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_text_to_text(conn, "st_topo_geom_get_elements") {
         eprintln!("[shim-scalars] skipping `st_topo_geom_get_elements`: {e}");
     } // alias of st_topogeomgetelements
+    if let Err(e) = register_text_to_u32(conn, "st_topogeomtopotype") {
+        eprintln!("[shim-scalars] skipping `st_topogeomtopotype`: {e}");
+    }
+    if let Err(e) = register_text_to_u32(conn, "st_topo_geom_topo_type") {
+        eprintln!("[shim-scalars] skipping `st_topo_geom_topo_type`: {e}");
+    } // alias of st_topogeomtopotype
     if let Err(e) = register_blob_to_u32(conn, "st_topologyedgecount") {
         eprintln!("[shim-scalars] skipping `st_topologyedgecount`: {e}");
     }
@@ -2259,6 +2658,15 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_translate") {
         eprintln!("[shim-scalars] skipping `st_translate`: {e}");
     }
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_translatethreed") {
+        eprintln!("[shim-scalars] skipping `st_translatethreed`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_3dtranslate") {
+        eprintln!("[shim-scalars] skipping `st_3dtranslate`: {e}");
+    } // alias of st_translatethreed
+    if let Err(e) = register_blob_f64_f64_f64_to_blob(conn, "st_translate_threed") {
+        eprintln!("[shim-scalars] skipping `st_translate_threed`: {e}");
+    } // alias of st_translatethreed
     if let Err(e) = register_blob_4f64_to_blob(conn, "st_transscale") {
         eprintln!("[shim-scalars] skipping `st_transscale`: {e}");
     }
@@ -2331,6 +2739,9 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_text(conn, "topology_validate") {
         eprintln!("[shim-scalars] skipping `topology_validate`: {e}");
     } // alias of st_validatetopology
+    if let Err(e) = register_blob_u32_u32_u32_to_f64(conn, "st_value") {
+        eprintln!("[shim-scalars] skipping `st_value`: {e}");
+    }
     if let Err(e) = register_blob_u32_to_text(conn, "st_valuecount") {
         eprintln!("[shim-scalars] skipping `st_valuecount`: {e}");
     }
@@ -2367,6 +2778,24 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_bool(conn, "st_within_batch") {
         eprintln!("[shim-scalars] skipping `st_within_batch`: {e}");
     } // alias of st_within
+    if let Err(e) = register_blob_f64_f64_to_text(conn, "st_worldtorastercoord") {
+        eprintln!("[shim-scalars] skipping `st_worldtorastercoord`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_to_text(conn, "st_world_to_raster_coord") {
+        eprintln!("[shim-scalars] skipping `st_world_to_raster_coord`: {e}");
+    } // alias of st_worldtorastercoord
+    if let Err(e) = register_blob_f64_f64_to_i32(conn, "st_worldtorastercoordcol") {
+        eprintln!("[shim-scalars] skipping `st_worldtorastercoordcol`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_to_i32(conn, "st_world_to_raster_coord_col") {
+        eprintln!("[shim-scalars] skipping `st_world_to_raster_coord_col`: {e}");
+    } // alias of st_worldtorastercoordcol
+    if let Err(e) = register_blob_f64_f64_to_i32(conn, "st_worldtorastercoordrow") {
+        eprintln!("[shim-scalars] skipping `st_worldtorastercoordrow`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_to_i32(conn, "st_world_to_raster_coord_row") {
+        eprintln!("[shim-scalars] skipping `st_world_to_raster_coord_row`: {e}");
+    } // alias of st_worldtorastercoordrow
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_wrapx") {
         eprintln!("[shim-scalars] skipping `st_wrapx`: {e}");
     }
@@ -2415,7 +2844,7 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_f64(conn, "st_zmin") {
         eprintln!("[shim-scalars] skipping `st_zmin`: {e}");
     }
-    // Phase 2: 788 names registered (20 shapes), 70 scalars deferred to Phase 3+ (49 unique shapes).
+    // Phase 2: 931 names registered (69 shapes), 0 scalars deferred to Phase 3+ (0 unique shapes).
     Ok(())
 }
 
@@ -4654,19 +5083,5513 @@ impl VScalar for BlobBlobU32ToBlobScalar {
     }
 }
 
-// Deferred shapes (Phase 3 target):
-//      3  [binary,float64,float64,float64] -> binary
-//      3  [binary,uint32,uint32] -> float64
-//      2  [binary,binary] -> text
-//      2  [text,int32] -> binary
-//      2  [binary,uint32,binary] -> text
-//      2  [text] -> uint32
-//      2  [binary,float64,float64] -> int32
-//      2  [float64,int32,int32] -> binary
-//      2  [binary,uint32,uint32] -> text
-//      2  [binary,uint32,binary] -> binary
-//      2  [binary,uint32,uint32,uint32] -> float64
-//      2  [float64,float64,float64,float64] -> binary
-//      2  [binary,int32,binary] -> binary
-//      2  [float64,float64] -> binary
-//      2  [binary,float64,int32] -> binary
+// ---- Phase 4g helpers — ttext-driven shapes ----
+
+// ---- (blob, text) -> bool ----
+fn register_blob_text_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobTextToBoolScalar>(sql_name, &def)
+}
+struct BlobTextToBoolScalar;
+impl VScalar for BlobTextToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s0 = r0[i];
+                let mut s1 = r1[i];
+                let bytes: Vec<u8> = DuckString::new(&mut s0).as_bytes().to_vec();
+                let s: String = DuckString::new(&mut s1).as_str().to_string();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes), FunctionValue::String(s)])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(b) => b,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobTextToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (blob, blob) -> text ----
+fn register_blob_blob_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobToTextScalar>(sql_name, &def)
+}
+struct BlobBlobToTextScalar;
+impl VScalar for BlobBlobToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let mut s0 = r0[i];
+            let mut s1 = r1[i];
+            let b0: Vec<u8> = DuckString::new(&mut s0).as_bytes().to_vec();
+            let b1: Vec<u8> = DuckString::new(&mut s1).as_bytes().to_vec();
+            let r = state
+                .execute(&[FunctionValue::Binary(b0), FunctionValue::Binary(b1)])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobBlobToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (blob, i64) -> text ----
+fn register_blob_i64_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64ToTextScalar>(sql_name, &def)
+}
+struct BlobI64ToTextScalar;
+impl VScalar for BlobI64ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_raw = r0[i];
+            let bytes: Vec<u8> = DuckString::new(&mut s_raw).as_bytes().to_vec();
+            let r = state
+                .execute(&[FunctionValue::Binary(bytes), FunctionValue::Int64(r1[i])])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobI64ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (blob, text, text) -> blob ----
+fn register_blob_text_text_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobTextTextToBlobScalar>(sql_name, &def)
+}
+struct BlobTextTextToBlobScalar;
+impl VScalar for BlobTextTextToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s0 = r0[i];
+            let mut s1 = r1[i];
+            let mut s2 = r2[i];
+            let bytes: Vec<u8> = DuckString::new(&mut s0).as_bytes().to_vec();
+            let t1: String = DuckString::new(&mut s1).as_str().to_string();
+            let t2: String = DuckString::new(&mut s2).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes),
+                    FunctionValue::String(t1),
+                    FunctionValue::String(t2),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (text, blob) -> blob ----
+// Reversed-arg constructors (e.g. ttext-prepend-str where the
+// first arg is the prefix string and the second is the
+// sequence).
+fn register_text_blob_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextBlobToBlobScalar>(sql_name, &def)
+}
+struct TextBlobToBlobScalar;
+impl VScalar for TextBlobToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let mut s0 = r0[i];
+            let mut s1 = r1[i];
+            let t: String = DuckString::new(&mut s0).as_str().to_string();
+            let bytes: Vec<u8> = DuckString::new(&mut s1).as_bytes().to_vec();
+            let r = state
+                .execute(&[FunctionValue::String(t), FunctionValue::Binary(bytes)])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- Phase 4h helpers — complete-coverage tail ----
+
+// ---- (binary, binary) -> uint32 ----
+fn register_blob_blob_to_u32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobToU32Scalar>(sql_name, &def)
+}
+struct BlobBlobToU32Scalar;
+impl VScalar for BlobBlobToU32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<u32>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::UInt32(v) => v,
+                    FunctionValue::UInt64(v) => v as u32,
+                    FunctionValue::Int32(v) => v as u32,
+                    FunctionValue::Int64(v) => v as u32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobToU32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::UInteger),
+        )]
+    }
+}
+
+// ---- (binary, binary, float64) -> float64 ----
+fn register_blob_blob_f64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobF64ToF64Scalar>(sql_name, &def)
+}
+struct BlobBlobF64ToF64Scalar;
+impl VScalar for BlobBlobF64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                        FunctionValue::Float64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobF64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, binary, float64, float64) -> float64 ----
+fn register_blob_blob_f64_f64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobF64F64ToF64Scalar>(sql_name, &def)
+}
+struct BlobBlobF64F64ToF64Scalar;
+impl VScalar for BlobBlobF64F64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                        FunctionValue::Float64(r2[i]),
+                        FunctionValue::Float64(r3[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobF64F64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, binary, float64, uint32) -> float64 ----
+fn register_blob_blob_f64_u32_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobF64U32ToF64Scalar>(sql_name, &def)
+}
+struct BlobBlobF64U32ToF64Scalar;
+impl VScalar for BlobBlobF64U32ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                        FunctionValue::Float64(r2[i]),
+                        FunctionValue::UInt32(r3[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobF64U32ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, binary, int64) -> float64 ----
+fn register_blob_blob_i64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobI64ToF64Scalar>(sql_name, &def)
+}
+struct BlobBlobI64ToF64Scalar;
+impl VScalar for BlobBlobI64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                        FunctionValue::Int64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobI64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, boolean) -> binary ----
+fn register_blob_bool_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBoolToBlobScalar>(sql_name, &def)
+}
+struct BlobBoolToBlobScalar;
+impl VScalar for BlobBoolToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<bool>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Boolean(r1[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Boolean),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64) -> int32 ----
+fn register_blob_f64_to_i32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64ToI32Scalar>(sql_name, &def)
+}
+struct BlobF64ToI32Scalar;
+impl VScalar for BlobF64ToI32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i32>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int32(v) => v,
+                    FunctionValue::Int64(v) => v as i32,
+                    FunctionValue::UInt32(v) => v as i32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64ToI32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Integer),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64) -> float64 ----
+fn register_blob_f64_f64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64ToF64Scalar>(sql_name, &def)
+}
+struct BlobF64F64ToF64Scalar;
+impl VScalar for BlobF64F64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64F64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, float64) -> binary ----
+fn register_blob_f64_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64F64ToBlobScalar>(sql_name, &def)
+}
+struct BlobF64F64F64ToBlobScalar;
+impl VScalar for BlobF64F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::Float64(r3[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, float64) -> boolean ----
+fn register_blob_f64_f64_f64_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64F64ToBoolScalar>(sql_name, &def)
+}
+struct BlobF64F64F64ToBoolScalar;
+impl VScalar for BlobF64F64F64ToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                        FunctionValue::Float64(r3[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(v) => v,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64F64F64ToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, float64, int64) -> float64 ----
+fn register_blob_f64_f64_f64_i64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64F64I64ToF64Scalar>(sql_name, &def)
+}
+struct BlobF64F64F64I64ToF64Scalar;
+impl VScalar for BlobF64F64F64I64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let v4 = input.flat_vector(4);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let r4 = unsafe { v4.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64)
+                        || v4.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                        FunctionValue::Float64(r3[i]),
+                        FunctionValue::Int64(r4[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64F64F64I64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, int64) -> binary ----
+fn register_blob_f64_f64_i64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64I64ToBlobScalar>(sql_name, &def)
+}
+struct BlobF64F64I64ToBlobScalar;
+impl VScalar for BlobF64F64I64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::Int64(r3[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, int64) -> boolean ----
+fn register_blob_f64_f64_i64_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64I64ToBoolScalar>(sql_name, &def)
+}
+struct BlobF64F64I64ToBoolScalar;
+impl VScalar for BlobF64F64I64ToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                        FunctionValue::Int64(r3[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(v) => v,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64F64I64ToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (binary, float64, int64) -> binary ----
+fn register_blob_f64_i64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64I64ToBlobScalar>(sql_name, &def)
+}
+struct BlobF64I64ToBlobScalar;
+impl VScalar for BlobF64I64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Int64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, int64) -> int64 ----
+fn register_blob_f64_i64_to_i64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64I64ToI64Scalar>(sql_name, &def)
+}
+struct BlobF64I64ToI64Scalar;
+impl VScalar for BlobF64I64ToI64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Int64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int64(v) => v,
+                    FunctionValue::Int32(v) => v as i64,
+                    FunctionValue::UInt32(v) => v as i64,
+                    FunctionValue::UInt64(v) => v as i64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64I64ToI64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Bigint),
+        )]
+    }
+}
+
+// ---- (binary, float64, uint32) -> int32 ----
+fn register_blob_f64_u32_to_i32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64U32ToI32Scalar>(sql_name, &def)
+}
+struct BlobF64U32ToI32Scalar;
+impl VScalar for BlobF64U32ToI32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i32>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::UInt32(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int32(v) => v,
+                    FunctionValue::Int64(v) => v as i32,
+                    FunctionValue::UInt32(v) => v as i32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64U32ToI32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Integer),
+        )]
+    }
+}
+
+// ---- (binary, int32) -> boolean ----
+fn register_blob_i32_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI32ToBoolScalar>(sql_name, &def)
+}
+struct BlobI32ToBoolScalar;
+impl VScalar for BlobI32ToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::Int32(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(v) => v,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobI32ToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (binary, int64) -> int32 ----
+fn register_blob_i64_to_i32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64ToI32Scalar>(sql_name, &def)
+}
+struct BlobI64ToI32Scalar;
+impl VScalar for BlobI64ToI32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i32>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::Int64(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int32(v) => v,
+                    FunctionValue::Int64(v) => v as i32,
+                    FunctionValue::UInt32(v) => v as i32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobI64ToI32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Integer),
+        )]
+    }
+}
+
+// ---- (binary, int64) -> int64 ----
+fn register_blob_i64_to_i64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64ToI64Scalar>(sql_name, &def)
+}
+struct BlobI64ToI64Scalar;
+impl VScalar for BlobI64ToI64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i64>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::Int64(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int64(v) => v,
+                    FunctionValue::Int32(v) => v as i64,
+                    FunctionValue::UInt32(v) => v as i64,
+                    FunctionValue::UInt64(v) => v as i64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobI64ToI64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Bigint),
+        )]
+    }
+}
+
+// ---- (binary, int64, int64) -> boolean ----
+fn register_blob_i64_i64_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64I64ToBoolScalar>(sql_name, &def)
+}
+struct BlobI64I64ToBoolScalar;
+impl VScalar for BlobI64I64ToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Int64(r1[i]),
+                        FunctionValue::Int64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(v) => v,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobI64I64ToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (binary, int64, int64) -> float64 ----
+fn register_blob_i64_i64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64I64ToF64Scalar>(sql_name, &def)
+}
+struct BlobI64I64ToF64Scalar;
+impl VScalar for BlobI64I64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Int64(r1[i]),
+                        FunctionValue::Int64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobI64I64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, int64, int64) -> int64 ----
+fn register_blob_i64_i64_to_i64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64I64ToI64Scalar>(sql_name, &def)
+}
+struct BlobI64I64ToI64Scalar;
+impl VScalar for BlobI64I64ToI64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Int64(r1[i]),
+                        FunctionValue::Int64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int64(v) => v,
+                    FunctionValue::Int32(v) => v as i64,
+                    FunctionValue::UInt32(v) => v as i64,
+                    FunctionValue::UInt64(v) => v as i64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobI64I64ToI64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Bigint),
+        )]
+    }
+}
+
+// ---- (binary, int64, int64) -> text ----
+fn register_blob_i64_i64_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI64I64ToTextScalar>(sql_name, &def)
+}
+struct BlobI64I64ToTextScalar;
+impl VScalar for BlobI64I64ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Int64(r1[i]),
+                    FunctionValue::Int64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobI64I64ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, uint32) -> float64 ----
+fn register_blob_u32_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32ToF64Scalar>(sql_name, &def)
+}
+struct BlobU32ToF64Scalar;
+impl VScalar for BlobU32ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::UInt32(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobU32ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, uint32) -> int32 ----
+fn register_blob_u32_to_i32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32ToI32Scalar>(sql_name, &def)
+}
+struct BlobU32ToI32Scalar;
+impl VScalar for BlobU32ToI32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i32>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::UInt32(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int32(v) => v,
+                    FunctionValue::Int64(v) => v as i32,
+                    FunctionValue::UInt32(v) => v as i32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobU32ToI32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Integer),
+        )]
+    }
+}
+
+// ---- (binary, uint32, float64) -> float64 ----
+fn register_blob_u32_f64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32F64ToF64Scalar>(sql_name, &def)
+}
+struct BlobU32F64ToF64Scalar;
+impl VScalar for BlobU32F64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::UInt32(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobU32F64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (float64, float64) -> float64 ----
+fn register_f64_f64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64ToF64Scalar>(sql_name, &def)
+}
+struct F64F64ToF64Scalar;
+impl VScalar for F64F64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let r = state
+                    .execute(&[FunctionValue::Float64(r0[i]), FunctionValue::Float64(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "F64F64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (float64, float64, boolean, boolean) -> binary ----
+fn register_f64_f64_bool_bool_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64BoolBoolToBlobScalar>(sql_name, &def)
+}
+struct F64F64BoolBoolToBlobScalar;
+impl VScalar for F64F64BoolBoolToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<bool>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<bool>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Float64(r0[i]),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Boolean(r2[i]),
+                    FunctionValue::Boolean(r3[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Boolean),
+                LogicalTypeHandle::from(LogicalTypeId::Boolean),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (float64, float64, float64, float64) -> binary ----
+fn register_f64_f64_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64F64F64ToBlobScalar>(sql_name, &def)
+}
+struct F64F64F64F64ToBlobScalar;
+impl VScalar for F64F64F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Float64(r0[i]),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::Float64(r3[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (float64, float64, float64, float64) -> float64 ----
+fn register_f64_f64_f64_f64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64F64F64ToF64Scalar>(sql_name, &def)
+}
+struct F64F64F64F64ToF64Scalar;
+impl VScalar for F64F64F64F64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let r = state
+                    .execute(&[
+                        FunctionValue::Float64(r0[i]),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                        FunctionValue::Float64(r3[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "F64F64F64F64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (int64, float64) -> binary ----
+fn register_i64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<I64F64ToBlobScalar>(sql_name, &def)
+}
+struct I64F64ToBlobScalar;
+impl VScalar for I64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<i64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[FunctionValue::Int64(r0[i]), FunctionValue::Float64(r1[i])])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (int64, float64, float64) -> binary ----
+fn register_i64_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<I64F64F64ToBlobScalar>(sql_name, &def)
+}
+struct I64F64F64ToBlobScalar;
+impl VScalar for I64F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<i64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Int64(r0[i]),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (text, int64, int64) -> binary ----
+fn register_text_i64_i64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextI64I64ToBlobScalar>(sql_name, &def)
+}
+struct TextI64I64ToBlobScalar;
+impl VScalar for TextI64I64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let t_0: String = DuckString::new(&mut s_0).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::String(t_0),
+                    FunctionValue::Int64(r1[i]),
+                    FunctionValue::Int64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (text, int64, int64) -> float64 ----
+fn register_text_i64_i64_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextI64I64ToF64Scalar>(sql_name, &def)
+}
+struct TextI64I64ToF64Scalar;
+impl VScalar for TextI64I64ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let t_0: String = DuckString::new(&mut s_0).as_str().to_string();
+                let r = state
+                    .execute(&[
+                        FunctionValue::String(t_0),
+                        FunctionValue::Int64(r1[i]),
+                        FunctionValue::Int64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "TextI64I64ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+                LogicalTypeHandle::from(LogicalTypeId::Bigint),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (uint64) -> int64 ----
+fn register_u64_to_i64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<U64ToI64Scalar>(sql_name, &def)
+}
+struct U64ToI64Scalar;
+impl VScalar for U64ToI64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let r0 = unsafe { v0.as_slice_with_len::<u64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i64>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let r = state
+                    .execute(&[FunctionValue::UInt64(r0[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int64(v) => v,
+                    FunctionValue::Int32(v) => v as i64,
+                    FunctionValue::UInt32(v) => v as i64,
+                    FunctionValue::UInt64(v) => v as i64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "U64ToI64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![LogicalTypeHandle::from(LogicalTypeId::UBigint)],
+            LogicalTypeHandle::from(LogicalTypeId::Bigint),
+        )]
+    }
+}
+
+// ---- Phase 4i helpers — postgis-driven shapes ----
+
+// ---- (binary, binary) -> int32 ----
+fn register_blob_blob_to_i32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobToI32Scalar>(sql_name, &def)
+}
+struct BlobBlobToI32Scalar;
+impl VScalar for BlobBlobToI32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i32>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int32(v) => v,
+                    FunctionValue::Int64(v) => v as i32,
+                    FunctionValue::UInt32(v) => v as i32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobToI32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Integer),
+        )]
+    }
+}
+
+// ---- (binary, binary, binary) -> float64 ----
+fn register_blob_blob_blob_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobBlobToF64Scalar>(sql_name, &def)
+}
+struct BlobBlobBlobToF64Scalar;
+impl VScalar for BlobBlobBlobToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let mut s_2 = r2[i];
+                let bytes_2: Vec<u8> = DuckString::new(&mut s_2).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                        FunctionValue::Binary(bytes_2),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobBlobToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, binary, float64) -> binary ----
+fn register_blob_blob_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobF64ToBlobScalar>(sql_name, &def)
+}
+struct BlobBlobF64ToBlobScalar;
+impl VScalar for BlobBlobF64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_1 = r1[i];
+            let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Binary(bytes_1),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, binary, float64) -> uint32 ----
+fn register_blob_blob_f64_to_u32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobBlobF64ToU32Scalar>(sql_name, &def)
+}
+struct BlobBlobF64ToU32Scalar;
+impl VScalar for BlobBlobF64ToU32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<u32>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let mut s_1 = r1[i];
+                let bytes_1: Vec<u8> = DuckString::new(&mut s_1).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Binary(bytes_1),
+                        FunctionValue::Float64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::UInt32(v) => v,
+                    FunctionValue::UInt64(v) => v as u32,
+                    FunctionValue::Int32(v) => v as u32,
+                    FunctionValue::Int64(v) => v as u32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobBlobF64ToU32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::UInteger),
+        )]
+    }
+}
+
+// ---- (binary, float64, boolean) -> binary ----
+fn register_blob_f64_bool_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64BoolToBlobScalar>(sql_name, &def)
+}
+struct BlobF64BoolToBlobScalar;
+impl VScalar for BlobF64BoolToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<bool>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Boolean(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Boolean),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64) -> int32 ----
+fn register_blob_f64_f64_to_i32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64ToI32Scalar>(sql_name, &def)
+}
+struct BlobF64F64ToI32Scalar;
+impl VScalar for BlobF64F64ToI32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<i32>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::Float64(r1[i]),
+                        FunctionValue::Float64(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Int32(v) => v,
+                    FunctionValue::Int64(v) => v as i32,
+                    FunctionValue::UInt32(v) => v as i32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobF64F64ToI32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Integer),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64) -> text ----
+fn register_blob_f64_f64_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64ToTextScalar>(sql_name, &def)
+}
+struct BlobF64F64ToTextScalar;
+impl VScalar for BlobF64F64ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobF64F64ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, float64, float64, float64, float64) -> binary ----
+fn register_blob_f64_f64_f64_f64_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64F64F64F64F64ToBlobScalar>(sql_name, &def)
+}
+struct BlobF64F64F64F64F64F64ToBlobScalar;
+impl VScalar for BlobF64F64F64F64F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let v4 = input.flat_vector(4);
+        let v5 = input.flat_vector(5);
+        let v6 = input.flat_vector(6);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let r4 = unsafe { v4.as_slice_with_len::<f64>(n) };
+        let r5 = unsafe { v5.as_slice_with_len::<f64>(n) };
+        let r6 = unsafe { v6.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64)
+                    || v4.row_is_null(i as u64)
+                    || v5.row_is_null(i as u64)
+                    || v6.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::Float64(r3[i]),
+                    FunctionValue::Float64(r4[i]),
+                    FunctionValue::Float64(r5[i]),
+                    FunctionValue::Float64(r6[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, float64, text) -> binary ----
+fn register_blob_f64_f64_text_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64F64TextToBlobScalar>(sql_name, &def)
+}
+struct BlobF64F64TextToBlobScalar;
+impl VScalar for BlobF64F64TextToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_3 = r3[i];
+            let t_3: String = DuckString::new(&mut s_3).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::String(t_3),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, int32) -> binary ----
+fn register_blob_f64_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64I32ToBlobScalar>(sql_name, &def)
+}
+struct BlobF64I32ToBlobScalar;
+impl VScalar for BlobF64I32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Int32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, float64, int32) -> text ----
+fn register_blob_f64_i32_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobF64I32ToTextScalar>(sql_name, &def)
+}
+struct BlobF64I32ToTextScalar;
+impl VScalar for BlobF64I32ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Int32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobF64I32ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, int32) -> text ----
+fn register_blob_i32_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI32ToTextScalar>(sql_name, &def)
+}
+struct BlobI32ToTextScalar;
+impl VScalar for BlobI32ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::Int32(r1[i])])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobI32ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, int32, binary) -> binary ----
+fn register_blob_i32_blob_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI32BlobToBlobScalar>(sql_name, &def)
+}
+struct BlobI32BlobToBlobScalar;
+impl VScalar for BlobI32BlobToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let bytes_2: Vec<u8> = DuckString::new(&mut s_2).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Int32(r1[i]),
+                    FunctionValue::Binary(bytes_2),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, int32, binary) -> text ----
+fn register_blob_i32_blob_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI32BlobToTextScalar>(sql_name, &def)
+}
+struct BlobI32BlobToTextScalar;
+impl VScalar for BlobI32BlobToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let bytes_2: Vec<u8> = DuckString::new(&mut s_2).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Int32(r1[i]),
+                    FunctionValue::Binary(bytes_2),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobI32BlobToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, int32, int32) -> binary ----
+fn register_blob_i32_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobI32I32ToBlobScalar>(sql_name, &def)
+}
+struct BlobI32I32ToBlobScalar;
+impl VScalar for BlobI32I32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::Int32(r1[i]),
+                    FunctionValue::Int32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, text, float64) -> binary ----
+fn register_blob_text_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobTextF64ToBlobScalar>(sql_name, &def)
+}
+struct BlobTextF64ToBlobScalar;
+impl VScalar for BlobTextF64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_1 = r1[i];
+            let t_1: String = DuckString::new(&mut s_1).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::String(t_1),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, text, int32) -> binary ----
+fn register_blob_text_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobTextI32ToBlobScalar>(sql_name, &def)
+}
+struct BlobTextI32ToBlobScalar;
+impl VScalar for BlobTextI32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_1 = r1[i];
+            let t_1: String = DuckString::new(&mut s_1).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::String(t_1),
+                    FunctionValue::Int32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32) -> boolean ----
+fn register_blob_u32_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32ToBoolScalar>(sql_name, &def)
+}
+struct BlobU32ToBoolScalar;
+impl VScalar for BlobU32ToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[FunctionValue::Binary(bytes_0), FunctionValue::UInt32(r1[i])])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(v) => v,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobU32ToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (binary, uint32, binary) -> binary ----
+fn register_blob_u32_blob_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32BlobToBlobScalar>(sql_name, &def)
+}
+struct BlobU32BlobToBlobScalar;
+impl VScalar for BlobU32BlobToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let bytes_2: Vec<u8> = DuckString::new(&mut s_2).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::Binary(bytes_2),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, binary) -> text ----
+fn register_blob_u32_blob_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32BlobToTextScalar>(sql_name, &def)
+}
+struct BlobU32BlobToTextScalar;
+impl VScalar for BlobU32BlobToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let bytes_2: Vec<u8> = DuckString::new(&mut s_2).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::Binary(bytes_2),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobU32BlobToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, uint32, binary, uint32, text, text) -> binary ----
+fn register_blob_u32_blob_u32_text_text_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32BlobU32TextTextToBlobScalar>(sql_name, &def)
+}
+struct BlobU32BlobU32TextTextToBlobScalar;
+impl VScalar for BlobU32BlobU32TextTextToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let v4 = input.flat_vector(4);
+        let v5 = input.flat_vector(5);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<u32>(n) };
+        let r4 = unsafe { v4.as_slice_with_len::<duckdb_string_t>(n) };
+        let r5 = unsafe { v5.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64)
+                    || v4.row_is_null(i as u64)
+                    || v5.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let bytes_2: Vec<u8> = DuckString::new(&mut s_2).as_bytes().to_vec();
+            let mut s_4 = r4[i];
+            let t_4: String = DuckString::new(&mut s_4).as_str().to_string();
+            let mut s_5 = r5[i];
+            let t_5: String = DuckString::new(&mut s_5).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::Binary(bytes_2),
+                    FunctionValue::UInt32(r3[i]),
+                    FunctionValue::String(t_4),
+                    FunctionValue::String(t_5),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, float64) -> text ----
+fn register_blob_u32_f64_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32F64ToTextScalar>(sql_name, &def)
+}
+struct BlobU32F64ToTextScalar;
+impl VScalar for BlobU32F64ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobU32F64ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, uint32, float64, float64) -> binary ----
+fn register_blob_u32_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32F64F64ToBlobScalar>(sql_name, &def)
+}
+struct BlobU32F64F64ToBlobScalar;
+impl VScalar for BlobU32F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::Float64(r3[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, text) -> text ----
+fn register_blob_u32_text_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32TextToTextScalar>(sql_name, &def)
+}
+struct BlobU32TextToTextScalar;
+impl VScalar for BlobU32TextToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let t_2: String = DuckString::new(&mut s_2).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::String(t_2),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobU32TextToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, uint32, text, text) -> binary ----
+fn register_blob_u32_text_text_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32TextTextToBlobScalar>(sql_name, &def)
+}
+struct BlobU32TextTextToBlobScalar;
+impl VScalar for BlobU32TextTextToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<duckdb_string_t>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_2 = r2[i];
+            let t_2: String = DuckString::new(&mut s_2).as_str().to_string();
+            let mut s_3 = r3[i];
+            let t_3: String = DuckString::new(&mut s_3).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::String(t_2),
+                    FunctionValue::String(t_3),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32) -> float64 ----
+fn register_blob_u32_u32_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32ToF64Scalar>(sql_name, &def)
+}
+struct BlobU32U32ToF64Scalar;
+impl VScalar for BlobU32U32ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::UInt32(r1[i]),
+                        FunctionValue::UInt32(r2[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobU32U32ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32) -> text ----
+fn register_blob_u32_u32_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32ToTextScalar>(sql_name, &def)
+}
+struct BlobU32U32ToTextScalar;
+impl VScalar for BlobU32U32ToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::UInt32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobU32U32ToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32, binary) -> binary ----
+fn register_blob_u32_u32_blob_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32BlobToBlobScalar>(sql_name, &def)
+}
+struct BlobU32U32BlobToBlobScalar;
+impl VScalar for BlobU32U32BlobToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_3 = r3[i];
+            let bytes_3: Vec<u8> = DuckString::new(&mut s_3).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::UInt32(r2[i]),
+                    FunctionValue::Binary(bytes_3),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32, binary) -> text ----
+fn register_blob_u32_u32_blob_to_text(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32BlobToTextScalar>(sql_name, &def)
+}
+struct BlobU32U32BlobToTextScalar;
+impl VScalar for BlobU32U32BlobToTextScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_3 = r3[i];
+            let bytes_3: Vec<u8> = DuckString::new(&mut s_3).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::UInt32(r2[i]),
+                    FunctionValue::Binary(bytes_3),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            match r {
+                FunctionValue::String(s) => out.insert(i, s.as_str()),
+                FunctionValue::Binary(b) => out.insert(i, b.as_slice()),
+                FunctionValue::Null => out.set_null(i),
+                other => {
+                    return Err(format!(
+                        "BlobU32U32BlobToTextScalar: unexpected variant `{}`",
+                        other.type_name()
+                    )
+                    .into())
+                }
+            }
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Varchar),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32, text) -> binary ----
+fn register_blob_u32_u32_text_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32TextToBlobScalar>(sql_name, &def)
+}
+struct BlobU32U32TextToBlobScalar;
+impl VScalar for BlobU32U32TextToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_3 = r3[i];
+            let t_3: String = DuckString::new(&mut s_3).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::UInt32(r2[i]),
+                    FunctionValue::String(t_3),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32, uint32) -> float64 ----
+fn register_blob_u32_u32_u32_to_f64(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32U32ToF64Scalar>(sql_name, &def)
+}
+struct BlobU32U32U32ToF64Scalar;
+impl VScalar for BlobU32U32U32ToF64Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<f64>(n) };
+            for i in 0..n {
+                if propagates_null
+                    && (v0.row_is_null(i as u64)
+                        || v1.row_is_null(i as u64)
+                        || v2.row_is_null(i as u64)
+                        || v3.row_is_null(i as u64))
+                {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+                let r = state
+                    .execute(&[
+                        FunctionValue::Binary(bytes_0),
+                        FunctionValue::UInt32(r1[i]),
+                        FunctionValue::UInt32(r2[i]),
+                        FunctionValue::UInt32(r3[i]),
+                    ])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Float64(v) => v,
+                    FunctionValue::Float32(v) => v as f64,
+                    FunctionValue::Int64(v) => v as f64,
+                    FunctionValue::Int32(v) => v as f64,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0.0
+                    }
+                    other => {
+                        return Err(format!(
+                            "BlobU32U32U32ToF64Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Double),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32, uint32, binary) -> binary ----
+fn register_blob_u32_u32_u32_blob_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32U32BlobToBlobScalar>(sql_name, &def)
+}
+struct BlobU32U32U32BlobToBlobScalar;
+impl VScalar for BlobU32U32U32BlobToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let v4 = input.flat_vector(4);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<u32>(n) };
+        let r4 = unsafe { v4.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64)
+                    || v4.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let mut s_4 = r4[i];
+            let bytes_4: Vec<u8> = DuckString::new(&mut s_4).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::UInt32(r2[i]),
+                    FunctionValue::UInt32(r3[i]),
+                    FunctionValue::Binary(bytes_4),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (binary, uint32, uint32, uint32, float64) -> binary ----
+fn register_blob_u32_u32_u32_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<BlobU32U32U32F64ToBlobScalar>(sql_name, &def)
+}
+struct BlobU32U32U32F64ToBlobScalar;
+impl VScalar for BlobU32U32U32F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let v4 = input.flat_vector(4);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<u32>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<u32>(n) };
+        let r4 = unsafe { v4.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64)
+                    || v4.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let bytes_0: Vec<u8> = DuckString::new(&mut s_0).as_bytes().to_vec();
+            let r = state
+                .execute(&[
+                    FunctionValue::Binary(bytes_0),
+                    FunctionValue::UInt32(r1[i]),
+                    FunctionValue::UInt32(r2[i]),
+                    FunctionValue::UInt32(r3[i]),
+                    FunctionValue::Float64(r4[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Blob),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (float64, float64) -> binary ----
+fn register_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64ToBlobScalar>(sql_name, &def)
+}
+struct F64F64ToBlobScalar;
+impl VScalar for F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[FunctionValue::Float64(r0[i]), FunctionValue::Float64(r1[i])])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (float64, float64, float64) -> binary ----
+fn register_f64_f64_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64F64ToBlobScalar>(sql_name, &def)
+}
+struct F64F64F64ToBlobScalar;
+impl VScalar for F64F64F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Float64(r0[i]),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (float64, float64, float64, float64, int32) -> binary ----
+fn register_f64_f64_f64_f64_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64F64F64F64I32ToBlobScalar>(sql_name, &def)
+}
+struct F64F64F64F64I32ToBlobScalar;
+impl VScalar for F64F64F64F64I32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let v3 = input.flat_vector(3);
+        let v4 = input.flat_vector(4);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<f64>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let r3 = unsafe { v3.as_slice_with_len::<f64>(n) };
+        let r4 = unsafe { v4.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64)
+                    || v3.row_is_null(i as u64)
+                    || v4.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Float64(r0[i]),
+                    FunctionValue::Float64(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                    FunctionValue::Float64(r3[i]),
+                    FunctionValue::Int32(r4[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (float64, int32, int32) -> binary ----
+fn register_f64_i32_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<F64I32I32ToBlobScalar>(sql_name, &def)
+}
+struct F64I32I32ToBlobScalar;
+impl VScalar for F64I32I32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<f64>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Float64(r0[i]),
+                    FunctionValue::Int32(r1[i]),
+                    FunctionValue::Int32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (int32, int32, int32) -> binary ----
+fn register_i32_i32_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<I32I32I32ToBlobScalar>(sql_name, &def)
+}
+struct I32I32I32ToBlobScalar;
+impl VScalar for I32I32I32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<i32>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[
+                    FunctionValue::Int32(r0[i]),
+                    FunctionValue::Int32(r1[i]),
+                    FunctionValue::Int32(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (text) -> uint32 ----
+fn register_text_to_u32(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextToU32Scalar>(sql_name, &def)
+}
+struct TextToU32Scalar;
+impl VScalar for TextToU32Scalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<u32>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let t_0: String = DuckString::new(&mut s_0).as_str().to_string();
+                let r = state
+                    .execute(&[FunctionValue::String(t_0)])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::UInt32(v) => v,
+                    FunctionValue::UInt64(v) => v as u32,
+                    FunctionValue::Int32(v) => v as u32,
+                    FunctionValue::Int64(v) => v as u32,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        0
+                    }
+                    other => {
+                        return Err(format!(
+                            "TextToU32Scalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![LogicalTypeHandle::from(LogicalTypeId::Varchar)],
+            LogicalTypeHandle::from(LogicalTypeId::UInteger),
+        )]
+    }
+}
+
+// ---- (text, int32) -> binary ----
+fn register_text_i32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextI32ToBlobScalar>(sql_name, &def)
+}
+struct TextI32ToBlobScalar;
+impl VScalar for TextI32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let t_0: String = DuckString::new(&mut s_0).as_str().to_string();
+            let r = state
+                .execute(&[FunctionValue::String(t_0), FunctionValue::Int32(r1[i])])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (text, int32, float64) -> binary ----
+fn register_text_i32_f64_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextI32F64ToBlobScalar>(sql_name, &def)
+}
+struct TextI32F64ToBlobScalar;
+impl VScalar for TextI32F64ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let v2 = input.flat_vector(2);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<i32>(n) };
+        let r2 = unsafe { v2.as_slice_with_len::<f64>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null
+                && (v0.row_is_null(i as u64)
+                    || v1.row_is_null(i as u64)
+                    || v2.row_is_null(i as u64))
+            {
+                out.set_null(i);
+                continue;
+            }
+            let mut s_0 = r0[i];
+            let t_0: String = DuckString::new(&mut s_0).as_str().to_string();
+            let r = state
+                .execute(&[
+                    FunctionValue::String(t_0),
+                    FunctionValue::Int32(r1[i]),
+                    FunctionValue::Float64(r2[i]),
+                ])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Integer),
+                LogicalTypeHandle::from(LogicalTypeId::Double),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
+
+// ---- (text, text) -> boolean ----
+fn register_text_text_to_bool(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<TextTextToBoolScalar>(sql_name, &def)
+}
+struct TextTextToBoolScalar;
+impl VScalar for TextTextToBoolScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<duckdb_string_t>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<duckdb_string_t>(n) };
+        let mut out = output.flat_vector();
+        let mut nulls: Vec<usize> = Vec::new();
+        let propagates_null = state.propagates_null();
+        {
+            let out_slice = unsafe { out.as_mut_slice_with_len::<bool>(n) };
+            for i in 0..n {
+                if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                    nulls.push(i);
+                    continue;
+                }
+                let mut s_0 = r0[i];
+                let t_0: String = DuckString::new(&mut s_0).as_str().to_string();
+                let mut s_1 = r1[i];
+                let t_1: String = DuckString::new(&mut s_1).as_str().to_string();
+                let r = state
+                    .execute(&[FunctionValue::String(t_0), FunctionValue::String(t_1)])
+                    .map_err(|e| format!("{e:?}"))?;
+                out_slice[i] = match r {
+                    FunctionValue::Boolean(v) => v,
+                    FunctionValue::Null => {
+                        nulls.push(i);
+                        false
+                    }
+                    other => {
+                        return Err(format!(
+                            "TextTextToBoolScalar: unexpected variant `{}`",
+                            other.type_name()
+                        )
+                        .into())
+                    }
+                };
+            }
+        }
+        for i in nulls {
+            out.set_null(i);
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+                LogicalTypeHandle::from(LogicalTypeId::Varchar),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Boolean),
+        )]
+    }
+}
+
+// ---- (uint32, uint32) -> binary ----
+fn register_u32_u32_to_blob(conn: &Connection, sql_name: &str) -> Result<()> {
+    let def = lookup(sql_name)?;
+    conn.register_scalar_function_with_state::<U32U32ToBlobScalar>(sql_name, &def)
+}
+struct U32U32ToBlobScalar;
+impl VScalar for U32U32ToBlobScalar {
+    type State = Arc<dyn ScalarFunctionDef>;
+    fn invoke(
+        state: &Self::State,
+        input: &mut DataChunkHandle,
+        output: &mut dyn WritableVector,
+    ) -> std::result::Result<(), Box<dyn std::error::Error>> {
+        let n = input.len();
+        let v0 = input.flat_vector(0);
+        let v1 = input.flat_vector(1);
+        let r0 = unsafe { v0.as_slice_with_len::<u32>(n) };
+        let r1 = unsafe { v1.as_slice_with_len::<u32>(n) };
+        let mut out = output.flat_vector();
+        let propagates_null = state.propagates_null();
+        for i in 0..n {
+            if propagates_null && (v0.row_is_null(i as u64) || v1.row_is_null(i as u64)) {
+                out.set_null(i);
+                continue;
+            }
+            let r = state
+                .execute(&[FunctionValue::UInt32(r0[i]), FunctionValue::UInt32(r1[i])])
+                .map_err(|e| format!("{e:?}"))?;
+            insert_blob_result::<Self>(&mut out, i, r)?;
+        }
+        Ok(())
+    }
+    fn signatures() -> Vec<ScalarFunctionSignature> {
+        vec![ScalarFunctionSignature::exact(
+            vec![
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+                LogicalTypeHandle::from(LogicalTypeId::UInteger),
+            ],
+            LogicalTypeHandle::from(LogicalTypeId::Blob),
+        )]
+    }
+}
