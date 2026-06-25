@@ -279,6 +279,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_text(conn, "st_as_encoded_polyline") {
         eprintln!("[shim-scalars] skipping `st_as_encoded_polyline`: {e}");
     } // alias of st_asencodedpolyline
+    if let Err(e) = register_blob_i32_to_text(conn, "st_asencodedpolyline") {
+        eprintln!("[shim-scalars] skipping `st_asencodedpolyline`: {e}");
+    }
+    if let Err(e) = register_blob_i32_to_text(conn, "st_as_encoded_polyline") {
+        eprintln!("[shim-scalars] skipping `st_as_encoded_polyline`: {e}");
+    } // alias of st_asencodedpolyline
     if let Err(e) = register_blob_to_blob(conn, "st_asewkb") {
         eprintln!("[shim-scalars] skipping `st_asewkb`: {e}");
     }
@@ -399,10 +405,28 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_as_twkb") {
         eprintln!("[shim-scalars] skipping `st_as_twkb`: {e}");
     } // alias of st_astwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_astwkb") {
+        eprintln!("[shim-scalars] skipping `st_astwkb`: {e}");
+    }
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_as_twkb") {
+        eprintln!("[shim-scalars] skipping `st_as_twkb`: {e}");
+    } // alias of st_astwkb
+    if let Err(e) = register_blob_i32_i32_to_blob(conn, "st_astwkb") {
+        eprintln!("[shim-scalars] skipping `st_astwkb`: {e}");
+    }
+    if let Err(e) = register_blob_i32_i32_to_blob(conn, "st_as_twkb") {
+        eprintln!("[shim-scalars] skipping `st_as_twkb`: {e}");
+    } // alias of st_astwkb
     if let Err(e) = register_blob_to_text(conn, "st_asx3d") {
         eprintln!("[shim-scalars] skipping `st_asx3d`: {e}");
     }
     if let Err(e) = register_blob_to_text(conn, "st_as_x3d") {
+        eprintln!("[shim-scalars] skipping `st_as_x3d`: {e}");
+    } // alias of st_asx3d
+    if let Err(e) = register_blob_i32_to_text(conn, "st_asx3d") {
+        eprintln!("[shim-scalars] skipping `st_asx3d`: {e}");
+    }
+    if let Err(e) = register_blob_i32_to_text(conn, "st_as_x3d") {
         eprintln!("[shim-scalars] skipping `st_as_x3d`: {e}");
     } // alias of st_asx3d
     if let Err(e) = register_blob_blob_to_f64(conn, "st_azimuth") {
@@ -585,6 +609,9 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_collect") {
         eprintln!("[shim-scalars] skipping `st_collect`: {e}");
     }
+    if let Err(e) = register_blob_blob_to_blob(conn, "st_collect") {
+        eprintln!("[shim-scalars] skipping `st_collect`: {e}");
+    }
     if let Err(e) = register_blob_i32_to_blob(conn, "st_collectionextract") {
         eprintln!("[shim-scalars] skipping `st_collectionextract`: {e}");
     }
@@ -705,6 +732,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_curve_to_line") {
         eprintln!("[shim-scalars] skipping `st_curve_to_line`: {e}");
     } // alias of st_curvetoline
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_curvetoline") {
+        eprintln!("[shim-scalars] skipping `st_curvetoline`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_curve_to_line") {
+        eprintln!("[shim-scalars] skipping `st_curve_to_line`: {e}");
+    } // alias of st_curvetoline
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_curvetoline") {
+        eprintln!("[shim-scalars] skipping `st_curvetoline`: {e}");
+    }
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_curve_to_line") {
+        eprintln!("[shim-scalars] skipping `st_curve_to_line`: {e}");
+    } // alias of st_curvetoline
     if let Err(e) = register_blob_to_blob(conn, "st_delaunaytriangles") {
         eprintln!("[shim-scalars] skipping `st_delaunaytriangles`: {e}");
     }
@@ -718,6 +757,36 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_constrainedelaunaytriangles`: {e}");
     } // alias of st_delaunaytriangles
     if let Err(e) = register_blob_to_blob(conn, "st_delaunay_triangles") {
+        eprintln!("[shim-scalars] skipping `st_delaunay_triangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_delaunaytriangles") {
+        eprintln!("[shim-scalars] skipping `st_delaunaytriangles`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_constrained_delaunay_triangles") {
+        eprintln!("[shim-scalars] skipping `st_constrained_delaunay_triangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_constraineddelaunaytriangles") {
+        eprintln!("[shim-scalars] skipping `st_constraineddelaunaytriangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_constrainedelaunaytriangles") {
+        eprintln!("[shim-scalars] skipping `st_constrainedelaunaytriangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_delaunay_triangles") {
+        eprintln!("[shim-scalars] skipping `st_delaunay_triangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_delaunaytriangles") {
+        eprintln!("[shim-scalars] skipping `st_delaunaytriangles`: {e}");
+    }
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_constrained_delaunay_triangles") {
+        eprintln!("[shim-scalars] skipping `st_constrained_delaunay_triangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_constraineddelaunaytriangles") {
+        eprintln!("[shim-scalars] skipping `st_constraineddelaunaytriangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_constrainedelaunaytriangles") {
+        eprintln!("[shim-scalars] skipping `st_constrainedelaunaytriangles`: {e}");
+    } // alias of st_delaunaytriangles
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_delaunay_triangles") {
         eprintln!("[shim-scalars] skipping `st_delaunay_triangles`: {e}");
     } // alias of st_delaunaytriangles
     if let Err(e) = register_blob_blob_f64_to_bool(conn, "st_dfullywithin") {
@@ -846,6 +915,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_blob_to_bool(conn, "st_equals_exact") {
         eprintln!("[shim-scalars] skipping `st_equals_exact`: {e}");
     } // alias of st_equalsexact
+    if let Err(e) = register_blob_blob_f64_to_bool(conn, "st_equalsexact") {
+        eprintln!("[shim-scalars] skipping `st_equalsexact`: {e}");
+    }
+    if let Err(e) = register_blob_blob_f64_to_bool(conn, "st_equals_exact") {
+        eprintln!("[shim-scalars] skipping `st_equals_exact`: {e}");
+    } // alias of st_equalsexact
     if let Err(e) = register_blob_f64_to_blob(conn, "st_expand") {
         eprintln!("[shim-scalars] skipping `st_expand`: {e}");
     }
@@ -862,6 +937,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_filterbym`: {e}");
     }
     if let Err(e) = register_blob_f64_to_blob(conn, "st_filter_by_m") {
+        eprintln!("[shim-scalars] skipping `st_filter_by_m`: {e}");
+    } // alias of st_filterbym
+    if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_filterbym") {
+        eprintln!("[shim-scalars] skipping `st_filterbym`: {e}");
+    }
+    if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_filter_by_m") {
         eprintln!("[shim-scalars] skipping `st_filter_by_m`: {e}");
     } // alias of st_filterbym
     if let Err(e) = register_blob_to_blob(conn, "st_flipcoordinates") {
@@ -927,6 +1008,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_force_fourd") {
         eprintln!("[shim-scalars] skipping `st_force_fourd`: {e}");
     } // alias of st_forcefourd
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_forcefourd") {
+        eprintln!("[shim-scalars] skipping `st_forcefourd`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_force4d") {
+        eprintln!("[shim-scalars] skipping `st_force4d`: {e}");
+    } // alias of st_forcefourd
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_force_4d") {
+        eprintln!("[shim-scalars] skipping `st_force_4d`: {e}");
+    } // alias of st_forcefourd
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_force_fourd") {
+        eprintln!("[shim-scalars] skipping `st_force_fourd`: {e}");
+    } // alias of st_forcefourd
     if let Err(e) = register_blob_to_blob(conn, "st_forcepolygonccw") {
         eprintln!("[shim-scalars] skipping `st_forcepolygonccw`: {e}");
     }
@@ -949,6 +1042,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_forcesfs`: {e}");
     }
     if let Err(e) = register_blob_to_blob(conn, "st_force_sfs") {
+        eprintln!("[shim-scalars] skipping `st_force_sfs`: {e}");
+    } // alias of st_forcesfs
+    if let Err(e) = register_blob_text_to_blob(conn, "st_forcesfs") {
+        eprintln!("[shim-scalars] skipping `st_forcesfs`: {e}");
+    }
+    if let Err(e) = register_blob_text_to_blob(conn, "st_force_sfs") {
         eprintln!("[shim-scalars] skipping `st_force_sfs`: {e}");
     } // alias of st_forcesfs
     if let Err(e) = register_blob_to_blob(conn, "st_forcethreedm") {
@@ -979,6 +1078,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_generatepoints`: {e}");
     }
     if let Err(e) = register_blob_i32_to_blob(conn, "st_generate_points") {
+        eprintln!("[shim-scalars] skipping `st_generate_points`: {e}");
+    } // alias of st_generatepoints
+    if let Err(e) = register_blob_i32_i32_to_blob(conn, "st_generatepoints") {
+        eprintln!("[shim-scalars] skipping `st_generatepoints`: {e}");
+    }
+    if let Err(e) = register_blob_i32_i32_to_blob(conn, "st_generate_points") {
         eprintln!("[shim-scalars] skipping `st_generate_points`: {e}");
     } // alias of st_generatepoints
     if let Err(e) = register_blob_to_f64(conn, "st_geogarea") {
@@ -1146,6 +1251,9 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_text(conn, "st_geohash") {
         eprintln!("[shim-scalars] skipping `st_geohash`: {e}");
     }
+    if let Err(e) = register_blob_i32_to_text(conn, "st_geohash") {
+        eprintln!("[shim-scalars] skipping `st_geohash`: {e}");
+    }
     if let Err(e) = register_blob_blob_to_bool(conn, "st_geomequal") {
         eprintln!("[shim-scalars] skipping `st_geomequal`: {e}");
     }
@@ -1153,6 +1261,18 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_geometricmedian`: {e}");
     }
     if let Err(e) = register_blob_to_blob(conn, "st_geometric_median") {
+        eprintln!("[shim-scalars] skipping `st_geometric_median`: {e}");
+    } // alias of st_geometricmedian
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_geometricmedian") {
+        eprintln!("[shim-scalars] skipping `st_geometricmedian`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_geometric_median") {
+        eprintln!("[shim-scalars] skipping `st_geometric_median`: {e}");
+    } // alias of st_geometricmedian
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_geometricmedian") {
+        eprintln!("[shim-scalars] skipping `st_geometricmedian`: {e}");
+    }
+    if let Err(e) = register_blob_f64_i32_to_blob(conn, "st_geometric_median") {
         eprintln!("[shim-scalars] skipping `st_geometric_median`: {e}");
     } // alias of st_geometricmedian
     if let Err(e) = register_blob_i32_to_blob(conn, "st_geometryn") {
@@ -1197,6 +1317,15 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_text_to_blob(conn, "st_geom_from_geohash") {
         eprintln!("[shim-scalars] skipping `st_geom_from_geohash`: {e}");
     } // alias of st_geomfromgeohash
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geomfromgeohash") {
+        eprintln!("[shim-scalars] skipping `st_geomfromgeohash`: {e}");
+    }
+    if let Err(e) = register_text_i32_to_blob(conn, "st_box2dfromgeohash") {
+        eprintln!("[shim-scalars] skipping `st_box2dfromgeohash`: {e}");
+    } // alias of st_geomfromgeohash
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geom_from_geohash") {
+        eprintln!("[shim-scalars] skipping `st_geom_from_geohash`: {e}");
+    } // alias of st_geomfromgeohash
     if let Err(e) = register_text_to_blob(conn, "st_geomfromgeojson") {
         eprintln!("[shim-scalars] skipping `st_geomfromgeojson`: {e}");
     }
@@ -1207,6 +1336,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_geomfromgml`: {e}");
     }
     if let Err(e) = register_text_to_blob(conn, "st_geom_from_gml") {
+        eprintln!("[shim-scalars] skipping `st_geom_from_gml`: {e}");
+    } // alias of st_geomfromgml
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geomfromgml") {
+        eprintln!("[shim-scalars] skipping `st_geomfromgml`: {e}");
+    }
+    if let Err(e) = register_text_i32_to_blob(conn, "st_geom_from_gml") {
         eprintln!("[shim-scalars] skipping `st_geom_from_gml`: {e}");
     } // alias of st_geomfromgml
     if let Err(e) = register_text_i32_to_blob(conn, "st_geomfromgmlsrid") {
@@ -1363,6 +1498,57 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_polygonfromwkb`: {e}");
     } // alias of st_geomfromwkb
     if let Err(e) = register_blob_to_blob(conn, "st_wkbtosql") {
+        eprintln!("[shim-scalars] skipping `st_wkbtosql`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_geomfromwkb") {
+        eprintln!("[shim-scalars] skipping `st_geomfromwkb`: {e}");
+    }
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_geom_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_geom_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_geomcoll_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_geomcoll_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_geomcollfromwkb") {
+        eprintln!("[shim-scalars] skipping `st_geomcollfromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_line_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_line_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_linefromwkb") {
+        eprintln!("[shim-scalars] skipping `st_linefromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_mline_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_mline_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_mlinefromwkb") {
+        eprintln!("[shim-scalars] skipping `st_mlinefromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_mpoint_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_mpoint_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_mpointfromwkb") {
+        eprintln!("[shim-scalars] skipping `st_mpointfromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_mpoly_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_mpoly_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_mpolyfromwkb") {
+        eprintln!("[shim-scalars] skipping `st_mpolyfromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_point_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_point_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_pointfromwkb") {
+        eprintln!("[shim-scalars] skipping `st_pointfromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_polygon_from_wkb") {
+        eprintln!("[shim-scalars] skipping `st_polygon_from_wkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_polygonfromwkb") {
+        eprintln!("[shim-scalars] skipping `st_polygonfromwkb`: {e}");
+    } // alias of st_geomfromwkb
+    if let Err(e) = register_blob_i32_to_blob(conn, "st_wkbtosql") {
         eprintln!("[shim-scalars] skipping `st_wkbtosql`: {e}");
     } // alias of st_geomfromwkb
     if let Err(e) = register_blob_blob_f64_to_u32(conn, "st_getedgebypoint") {
@@ -1599,6 +1785,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_largest_empty_circle") {
         eprintln!("[shim-scalars] skipping `st_largest_empty_circle`: {e}");
     } // alias of st_largestemptycircle
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_largestemptycircle") {
+        eprintln!("[shim-scalars] skipping `st_largestemptycircle`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_largest_empty_circle") {
+        eprintln!("[shim-scalars] skipping `st_largest_empty_circle`: {e}");
+    } // alias of st_largestemptycircle
     if let Err(e) = register_blob_to_f64(conn, "st_length") {
         eprintln!("[shim-scalars] skipping `st_length`: {e}");
     }
@@ -1648,6 +1840,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_linefromencodedpolyline`: {e}");
     }
     if let Err(e) = register_text_to_blob(conn, "st_line_from_encoded_polyline") {
+        eprintln!("[shim-scalars] skipping `st_line_from_encoded_polyline`: {e}");
+    } // alias of st_linefromencodedpolyline
+    if let Err(e) = register_text_i32_to_blob(conn, "st_linefromencodedpolyline") {
+        eprintln!("[shim-scalars] skipping `st_linefromencodedpolyline`: {e}");
+    }
+    if let Err(e) = register_text_i32_to_blob(conn, "st_line_from_encoded_polyline") {
         eprintln!("[shim-scalars] skipping `st_line_from_encoded_polyline`: {e}");
     } // alias of st_linefromencodedpolyline
     if let Err(e) = register_blob_to_blob(conn, "st_linefrommultipoint") {
@@ -1759,6 +1957,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_makeenvelope`: {e}");
     }
     if let Err(e) = register_f64_f64_f64_f64_to_blob(conn, "st_make_envelope") {
+        eprintln!("[shim-scalars] skipping `st_make_envelope`: {e}");
+    } // alias of st_makeenvelope
+    if let Err(e) = register_f64_f64_f64_f64_i32_to_blob(conn, "st_makeenvelope") {
+        eprintln!("[shim-scalars] skipping `st_makeenvelope`: {e}");
+    }
+    if let Err(e) = register_f64_f64_f64_f64_i32_to_blob(conn, "st_make_envelope") {
         eprintln!("[shim-scalars] skipping `st_make_envelope`: {e}");
     } // alias of st_makeenvelope
     if let Err(e) = register_f64_f64_f64_f64_i32_to_blob(conn, "st_makeenvelopesrid") {
@@ -2103,6 +2307,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_text_to_blob(conn, "st_point_from_geohash") {
         eprintln!("[shim-scalars] skipping `st_point_from_geohash`: {e}");
     } // alias of st_pointfromgeohash
+    if let Err(e) = register_text_i32_to_blob(conn, "st_pointfromgeohash") {
+        eprintln!("[shim-scalars] skipping `st_pointfromgeohash`: {e}");
+    }
+    if let Err(e) = register_text_i32_to_blob(conn, "st_point_from_geohash") {
+        eprintln!("[shim-scalars] skipping `st_point_from_geohash`: {e}");
+    } // alias of st_pointfromgeohash
     if let Err(e) = register_blob_f64_f64_f64_to_bool(conn, "st_pointinsidecircle") {
         eprintln!("[shim-scalars] skipping `st_pointinsidecircle`: {e}");
     }
@@ -2259,6 +2469,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_remove_repeated_points") {
         eprintln!("[shim-scalars] skipping `st_remove_repeated_points`: {e}");
     } // alias of st_removerepeatedpoints
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_removerepeatedpoints") {
+        eprintln!("[shim-scalars] skipping `st_removerepeatedpoints`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_remove_repeated_points") {
+        eprintln!("[shim-scalars] skipping `st_remove_repeated_points`: {e}");
+    } // alias of st_removerepeatedpoints
     if let Err(e) = register_blob_f64_f64_to_blob(conn, "st_removesmallparts") {
         eprintln!("[shim-scalars] skipping `st_removesmallparts`: {e}");
     }
@@ -2358,6 +2574,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_set_effective_area") {
         eprintln!("[shim-scalars] skipping `st_set_effective_area`: {e}");
     } // alias of st_seteffectivearea
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_seteffectivearea") {
+        eprintln!("[shim-scalars] skipping `st_seteffectivearea`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_set_effective_area") {
+        eprintln!("[shim-scalars] skipping `st_set_effective_area`: {e}");
+    } // alias of st_seteffectivearea
     if let Err(e) = register_blob_i32_blob_to_blob(conn, "st_setpoint") {
         eprintln!("[shim-scalars] skipping `st_setpoint`: {e}");
     }
@@ -2410,6 +2632,12 @@ pub fn register_all(conn: &Connection) -> Result<()> {
         eprintln!("[shim-scalars] skipping `st_simplifypolygonhull`: {e}");
     }
     if let Err(e) = register_blob_f64_to_blob(conn, "st_simplify_polygon_hull") {
+        eprintln!("[shim-scalars] skipping `st_simplify_polygon_hull`: {e}");
+    } // alias of st_simplifypolygonhull
+    if let Err(e) = register_blob_f64_bool_to_blob(conn, "st_simplifypolygonhull") {
+        eprintln!("[shim-scalars] skipping `st_simplifypolygonhull`: {e}");
+    }
+    if let Err(e) = register_blob_f64_bool_to_blob(conn, "st_simplify_polygon_hull") {
         eprintln!("[shim-scalars] skipping `st_simplify_polygon_hull`: {e}");
     } // alias of st_simplifypolygonhull
     if let Err(e) = register_blob_f64_to_blob(conn, "st_simplifypreservetopology") {
@@ -2757,10 +2985,22 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_blob(conn, "st_voronoi_lines") {
         eprintln!("[shim-scalars] skipping `st_voronoi_lines`: {e}");
     } // alias of st_voronoilines
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_voronoilines") {
+        eprintln!("[shim-scalars] skipping `st_voronoilines`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_voronoi_lines") {
+        eprintln!("[shim-scalars] skipping `st_voronoi_lines`: {e}");
+    } // alias of st_voronoilines
     if let Err(e) = register_blob_to_blob(conn, "st_voronoipolygons") {
         eprintln!("[shim-scalars] skipping `st_voronoipolygons`: {e}");
     }
     if let Err(e) = register_blob_to_blob(conn, "st_voronoi_polygons") {
+        eprintln!("[shim-scalars] skipping `st_voronoi_polygons`: {e}");
+    } // alias of st_voronoipolygons
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_voronoipolygons") {
+        eprintln!("[shim-scalars] skipping `st_voronoipolygons`: {e}");
+    }
+    if let Err(e) = register_blob_f64_to_blob(conn, "st_voronoi_polygons") {
         eprintln!("[shim-scalars] skipping `st_voronoi_polygons`: {e}");
     } // alias of st_voronoipolygons
     if let Err(e) = register_blob_to_u32(conn, "st_width") {
@@ -2844,7 +3084,7 @@ pub fn register_all(conn: &Connection) -> Result<()> {
     if let Err(e) = register_blob_to_f64(conn, "st_zmin") {
         eprintln!("[shim-scalars] skipping `st_zmin`: {e}");
     }
-    // Phase 2: 931 names registered (69 shapes), 0 scalars deferred to Phase 3+ (0 unique shapes).
+    // Phase 2: 1011 names registered (69 shapes), 17 scalars deferred to Phase 3+ (14 unique shapes).
     Ok(())
 }
 
@@ -10593,3 +10833,19 @@ impl VScalar for U32U32ToBlobScalar {
         )]
     }
 }
+
+// Deferred shapes (Phase 3 target):
+//      3  [binary,float64,binary] -> binary
+//      2  [float64,int32,int32,binary] -> binary
+//      1  [binary,float64,float64,boolean] -> binary
+//      1  [binary,int32,int32,int32,boolean] -> binary
+//      1  [binary,float64,text] -> binary
+//      1  [binary,int32,int32,int32,boolean,boolean] -> binary
+//      1  [binary,binary,binary,binary] -> float64
+//      1  [binary,binary,boolean] -> binary
+//      1  [binary,binary,int32] -> binary
+//      1  [binary,int32,int32,int32] -> binary
+//      1  [uint32,uint32,float64,float64,float64,float64,float64,float64,int32] -> binary
+//      1  [binary,text,float64,float64] -> binary
+//      1  [binary,float64,int32,int32] -> binary
+//      1  [binary,binary,boolean] -> text
